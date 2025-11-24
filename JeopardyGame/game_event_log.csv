@@ -1,0 +1,14 @@
+Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,,"Start Game",2025-11-24T18:40:36.093279548,,,,,
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Select Question",2025-11-24T18:40:41.679482417,"Geography",200,,,
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Answer Question",2025-11-24T18:40:54.008257804,"Geography",200,"Amazon","Incorrect",0
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Select Question",2025-11-24T18:41:03.592159816,"History",100,,,
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Answer Question",2025-11-24T18:41:17.495059363,"History",100,"George Washington","Correct",100
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Select Question",2025-11-24T18:41:48.814960108,"Science",200,,,
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Answer Question",2025-11-24T18:41:59.405492441,"Science",200,"Venus","Incorrect",0
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Select Question",2025-11-24T18:42:08.294961973,"Geography",100,,,
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Answer Question",2025-11-24T18:42:13.285994368,"Geography",100,"Paris","Correct",200
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Select Question",2025-11-24T18:42:54.090496734,"History",200,,,
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Answer Question",2025-11-24T18:42:58.896536899,"History",200,"1945","Correct",200
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Select Question",2025-11-24T18:43:05.120073021,"Science",100,,,
+1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Answer Question",2025-11-24T18:43:10.584737387,"Science",100,"H20","Incorrect",100
