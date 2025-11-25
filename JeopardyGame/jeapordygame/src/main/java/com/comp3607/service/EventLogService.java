@@ -17,6 +17,10 @@ public class EventLogService implements GameObserver {
         this.events = new ArrayList<>();
         this.currentCaseId = "GAME" + System.currentTimeMillis() % 10000; // Unique case ID
     }
+
+    public void logEvent(GameEvent event) {
+        events.add(event);
+    }
     
     @Override
     public void update(GameEvent event) {
