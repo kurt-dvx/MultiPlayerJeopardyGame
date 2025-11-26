@@ -19,7 +19,7 @@ public class ConsoleUI {
     }
     
     public void displayWelcome() {
-        System.out.println("🎯 Jeopardy Game Starting...");
+        System.out.println("Jeopardy Game Starting...");
     }
     
     public List<Player> setupPlayers() {
@@ -103,11 +103,11 @@ public class ConsoleUI {
     }
     
     public String askQuestion(Question question, String category, int value) {
-        System.out.println("\n" + "?".repeat(50));
+        System.out.println("\n" + "=".repeat(50));
         System.out.println("❓ QUESTION (" + category + " - $" + value + "):");
-        System.out.println("?".repeat(50));
+        System.out.println("=".repeat(50));
         System.out.println(question.getQuestionText());
-        System.out.println("?".repeat(50));
+        System.out.println("=".repeat(50));
         System.out.print("💡 Your answer: ");
         return scanner.nextLine();
     }

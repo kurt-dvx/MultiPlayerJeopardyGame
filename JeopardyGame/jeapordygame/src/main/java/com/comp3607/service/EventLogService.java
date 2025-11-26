@@ -2,6 +2,7 @@ package com.comp3607.service;
 
 import com.comp3607.model.GameEvent;
 import com.comp3607.observer.GameObserver;
+import com.comp3607.factory.GameEventFactory;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
@@ -29,62 +30,44 @@ public class EventLogService implements GameObserver {
     
     // Log system events
     public void logSystemEvent(String activity) {
-        GameEvent event = new GameEvent(currentCaseId, activity);
-        event.setPlayerId("System");
+        GameEvent event = GameEventFactory.createSystemEvent(currentCaseId, activity);
         events.add(event);
     }
     
     public void logFileLoad(String filename, boolean success) {
-        GameEvent event = new GameEvent(currentCaseId, "Load File");
-        event.setPlayerId("System");
-        event.setResult(success ? "Success" : "Failed");
+        GameEvent event = GameEventFactory.createSystemEvent(currentCaseId, "Load File", 
+                                                           success ? "Success" : "Failed");
         events.add(event);
     }
     
     public void logPlayerCount(int count) {
-        GameEvent event = new GameEvent(currentCaseId, "Select Player Count");
-        event.setPlayerId("System");
-        event.setAnswerGiven(String.valueOf(count));
+        GameEvent event = GameEventFactory.createPlayerCountEvent(currentCaseId, count);
         events.add(event);
     }
     
     public void logPlayerName(String playerId, String playerName) {
-        GameEvent event = new GameEvent(currentCaseId, "Enter Player Name");
-        event.setPlayerId(playerId);
-        event.setAnswerGiven(playerName);
+        GameEvent event = GameEventFactory.createPlayerNameEvent(currentCaseId, playerId, playerName);
         events.add(event);
     }
     
     public void logCategorySelection(String playerId, String category) {
-        GameEvent event = new GameEvent(currentCaseId, "Select Category");
-        event.setPlayerId(playerId);
-        event.setCategory(category);
+        GameEvent event = GameEventFactory.createCategorySelectionEvent(currentCaseId, playerId, category);
         events.add(event);
     }
     
     public void logQuestionSelection(String playerId, String category, int value) {
-        GameEvent event = new GameEvent(currentCaseId, "Select Question");
-        event.setPlayerId(playerId);
-        event.setCategory(category);
-        event.setQuestionValue(value);
+        GameEvent event = GameEventFactory.createQuestionSelectionEvent(currentCaseId, playerId, category, value);
         events.add(event);
     }
     
     public void logAnswer(String playerId, String category, int value, String answer, boolean isCorrect, int scoreAfter) {
-        GameEvent event = new GameEvent(currentCaseId, "Answer Question");
-        event.setPlayerId(playerId);
-        event.setCategory(category);
-        event.setQuestionValue(value);
-        event.setAnswerGiven(answer);
-        event.setResult(isCorrect ? "Correct" : "Incorrect");
-        event.setScoreAfterPlay(scoreAfter);
+        GameEvent event = GameEventFactory.createQuestionAnsweredEvent(currentCaseId, playerId, 
+                                                                     category, value, answer, isCorrect, scoreAfter);
         events.add(event);
     }
     
     public void logScoreUpdate(String playerId, int scoreAfter) {
-        GameEvent event = new GameEvent(currentCaseId, "Score Updated");
-        event.setPlayerId(playerId);
-        event.setScoreAfterPlay(scoreAfter);
+        GameEvent event = GameEventFactory.createScoreUpdateEvent(currentCaseId, playerId, scoreAfter);
         events.add(event);
     }
     

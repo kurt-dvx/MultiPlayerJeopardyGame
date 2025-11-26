@@ -16,6 +16,7 @@ public class GameNotifier {
     }
     
     public void notifyObservers(GameEvent event) {
+        if (event == null) return;
         for (GameObserver observer : observers) {
             observer.update(event);
         }

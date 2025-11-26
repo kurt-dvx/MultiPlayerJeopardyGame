@@ -2,7 +2,7 @@ package com.comp3607.service;
 
 import com.comp3607.model.*;
 import com.comp3607.observer.GameNotifier;
-import com.comp3607.builder.GameEventBuilder;
+import com.comp3607.factory.GameEventFactory;
 import java.util.*;
 
 public class GameService {
@@ -19,8 +19,8 @@ public class GameService {
     public void startGame(List<Player> players, List<Question> questions) {
         this.session = new GameSession(players, questions);
         
-        GameEvent event = new GameEventBuilder(caseId, "Start Game") // ← FIXED CONSTRUCTOR
-            .build();
+        // Use factory instead of builder
+        GameEvent event = GameEventFactory.createSystemEvent(caseId, "Start Game");
         notifier.notifyObservers(event);
     }
     
@@ -54,11 +54,8 @@ public class GameService {
                 currentQuestion = q;
                 
                 Player currentPlayer = session.getCurrentPlayer();
-                GameEvent event = new GameEventBuilder(caseId, "Select Question")
-                    .withPlayerId(currentPlayer.getId())
-                    .withCategory(category)
-                    .withQuestionValue(value)
-                    .build();
+                GameEvent event = GameEventFactory.createQuestionSelectionEvent(
+                    caseId, currentPlayer.getId(), category, value);
                 notifier.notifyObservers(event);
                 
                 return q;
@@ -72,7 +69,7 @@ public class GameService {
         return currentQuestion != null && currentQuestion.checkMultipleChoiceAnswer(answer);
     }
     
-    public boolean submitAnswer(String answer) { // ← REMOVED Player parameter
+    public boolean submitAnswer(String answer) {
         if (currentQuestion == null) return false;
         
         Player currentPlayer = session.getCurrentPlayer();
@@ -94,18 +91,16 @@ public class GameService {
         );
         session.addTurnHistory(turnInfo);
         
-        GameEvent event = new GameEventBuilder(caseId, "Answer Question")
-            .withPlayerId(currentPlayer.getId())
-            .withCategory(currentQuestion.getCategory())
-            .withQuestionValue(currentQuestion.getValue())
-            .withAnswerGiven(answer)
-            .withResult(isCorrect ? "Correct" : "Incorrect")
-            .withScoreAfterPlay(currentPlayer.getScore())
-            .build();
+        // Use factory instead of builder
+        GameEvent event = GameEventFactory.createQuestionAnsweredEvent(
+            caseId, currentPlayer.getId(), currentQuestion.getCategory(),
+            currentQuestion.getValue(), answer, isCorrect, currentPlayer.getScore()
+        );
         notifier.notifyObservers(event);
         
         return isCorrect;
     }
+
     
     // ← MISSING METHOD: Next turn
     public void nextTurn() {

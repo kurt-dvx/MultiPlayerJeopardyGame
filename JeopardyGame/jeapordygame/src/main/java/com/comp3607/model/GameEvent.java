@@ -1,43 +1,34 @@
+// model/GameEvent.java
 package com.comp3607.model;
 
 import java.time.LocalDateTime;
 
-public class GameEvent {
-    private String caseId;
-    private String playerId;
-    private String activity;
-    private LocalDateTime timestamp;
-    private String category;
-    private Integer questionValue;
-    private String answerGiven;
-    private String result;
-    private Integer scoreAfterPlay;
+public abstract class GameEvent {
+    protected String caseId;
+    protected String playerId;
+    protected String activity;
+    protected LocalDateTime timestamp;
     
-    // Constructor with caseId and activity
-    public GameEvent(String caseId, String activity) {
+    public GameEvent(String caseId, String playerId, String activity) {
         this.caseId = caseId;
+        this.playerId = playerId;
         this.activity = activity;
         this.timestamp = LocalDateTime.now();
     }
     
-    // Your existing getters and setters...
+    // Getters - ALL EXISTING CODE CAN STILL USE THESE
     public String getCaseId() { return caseId; }
     public String getPlayerId() { return playerId; }
     public String getActivity() { return activity; }
     public LocalDateTime getTimestamp() { return timestamp; }
-    public String getCategory() { return category; }
-    public Integer getQuestionValue() { return questionValue; }
-    public String getAnswerGiven() { return answerGiven; }
-    public String getResult() { return result; }
-    public Integer getScoreAfterPlay() { return scoreAfterPlay; }
     
-    public void setCaseId(String caseId) { this.caseId = caseId; }
-    public void setPlayerId(String playerId) { this.playerId = playerId; }
-    public void setActivity(String activity) { this.activity = activity; }
-    public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }
-    public void setCategory(String category) { this.category = category; }
-    public void setQuestionValue(Integer questionValue) { this.questionValue = questionValue; }
-    public void setAnswerGiven(String answerGiven) { this.answerGiven = answerGiven; }
-    public void setResult(String result) { this.result = result; }
-    public void setScoreAfterPlay(Integer scoreAfterPlay) { this.scoreAfterPlay = scoreAfterPlay; }
+    // Template Method Pattern for event formatting
+    public abstract String getEventType();
+    
+    // Default implementations for backward compatibility
+    public String getCategory() { return null; }
+    public Integer getQuestionValue() { return null; }
+    public String getAnswerGiven() { return null; }
+    public String getResult() { return null; }
+    public Integer getScoreAfterPlay() { return null; }
 }

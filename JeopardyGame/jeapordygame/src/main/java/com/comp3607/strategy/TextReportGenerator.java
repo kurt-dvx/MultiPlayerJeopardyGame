@@ -51,7 +51,7 @@ public class TextReportGenerator implements ReportGenerator {
                     writer.write("Turn " + (i + 1) + ": " + turnHistory.get(i) + "\n");
                 }
             } else {
-                writer.write("Turn-by-turn history would be displayed here.\n");
+                writer.write("Turn by turn history not available.\n");
             }
             writer.write("\n");
             
