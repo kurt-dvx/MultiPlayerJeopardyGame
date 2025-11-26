@@ -1,33 +1,39 @@
 package com.comp3607.service;
 
 import com.comp3607.model.Question;
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
-public class JSONQuestionParser implements QuestionParser {
+public class JSONQuestionParser extends AbstractQuestionParser {
+    
     @Override
-    public List<Question> parse(String filePath) {
+    protected List<Question> parseFromStream(InputStream inputStream) throws IOException {
         List<Question> questions = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
             StringBuilder jsonContent = new StringBuilder();
             String line;
             while ((line = br.readLine()) != null) {
                 jsonContent.append(line);
             }
             
-            // Simple JSON parsing (you can enhance this with Jackson later)
-            questions = parseSimpleJSON(jsonContent.toString());
-            
-        } catch (Exception e) {
-            System.err.println("Error parsing JSON file: " + e.getMessage());
+            // Simple JSON parsing
+            if (jsonContent.toString().contains("questions") || jsonContent.toString().contains("category")) {
+                questions = parseSimpleJSON(jsonContent.toString());
+            }
         }
+        
         return questions;
+    }
+    
+    @Override
+    protected String getSupportedFormat() {
+        return "JSON";
     }
     
     private List<Question> parseSimpleJSON(String json) {
         List<Question> questions = new ArrayList<>();
-        // Simple parsing for basic JSON structure
-        // This is a simplified version - you can use Jackson library for proper parsing
+
         if (json.contains("questions") && json.contains("category")) {
             // Add some sample questions for now
             questions.add(new Question("Science", 100, "What is the chemical symbol for gold?", "Au"));

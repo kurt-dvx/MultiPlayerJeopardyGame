@@ -4,60 +4,40 @@ import com.comp3607.model.Question;
 import java.util.*;
 import java.io.*;
 
-public class CSVQuestionParser implements QuestionParser {
+public class CSVQuestionParser extends AbstractQuestionParser {
+    
     @Override
-    public List<Question> parse(String filePath) {
+    protected List<Question> parseFromStream(InputStream inputStream) throws IOException {
         List<Question> questions = new ArrayList<>();
-        
-        // Try to load from classpath first
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
-        
-        if (inputStream != null) {
-            // File found in classpath (src/main/resources/)
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
-                questions = parseFromReader(br);
-                System.out.println("✓ Loaded questions from classpath: " + filePath);
-            } catch (Exception e) {
-                System.err.println("Error parsing CSV from classpath: " + e.getMessage());
-            }
-        } else {
-            // Try as direct file path
-            try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-                questions = parseFromReader(br);
-                System.out.println("✓ Loaded questions from file path: " + filePath);
-            } catch (Exception e) {
-                System.err.println("Error parsing CSV file: " + e.getMessage());
-                e.printStackTrace();
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+            String line;
+            boolean firstLine = true;
+            
+            while ((line = br.readLine()) != null) {
+                if (firstLine) {
+                    firstLine = false;
+                    continue; // Skip header
+                }
+                
+                String[] values = parseCSVLine(line);
+                if (values.length >= 8) {
+                    String category = values[0].trim();
+                    int value = Integer.parseInt(values[1].trim());
+                    String questionText = values[2].trim();
+                    
+                    String fullQuestion = buildMultipleChoiceQuestion(questionText, values);
+                    String correctAnswer = values[7].trim();
+                    
+                    questions.add(new Question(category, value, fullQuestion, correctAnswer));
+                }
             }
         }
-        
         return questions;
     }
-    
-    private List<Question> parseFromReader(BufferedReader br) throws IOException {
-        List<Question> questions = new ArrayList<>();
-        String line;
-        boolean firstLine = true;
-        
-        while ((line = br.readLine()) != null) {
-            if (firstLine) {
-                firstLine = false;
-                continue; // Skip header
-            }
-            
-            String[] values = parseCSVLine(line);
-            if (values.length >= 8) {
-                String category = values[0].trim();
-                int value = Integer.parseInt(values[1].trim());
-                String questionText = values[2].trim();
-                
-                String fullQuestion = buildMultipleChoiceQuestion(questionText, values);
-                String correctAnswer = values[7].trim();
-                
-                questions.add(new Question(category, value, fullQuestion, correctAnswer));
-            }
-        }
-        return questions;
+
+    @Override
+    protected String getSupportedFormat() {
+        return "CSV";
     }
     
     private String buildMultipleChoiceQuestion(String questionText, String[] values) {
