@@ -34,7 +34,6 @@ public class TextReportGenerator implements ReportGenerator {
             writer.write("\n");
             
             // Winner Information
-            // Winner Information
             Player winner = findWinner(players);
             if (winner != null) {
                 writer.write("WINNER: " + winner.getName() + " with $" + winner.getScore() + "\n");

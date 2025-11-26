@@ -1,14 +1,133 @@
 Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,,"Start Game",2025-11-24T18:40:36.093279548,,,,,
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Select Question",2025-11-24T18:40:41.679482417,"Geography",200,,,
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Answer Question",2025-11-24T18:40:54.008257804,"Geography",200,"Amazon","Incorrect",0
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Select Question",2025-11-24T18:41:03.592159816,"History",100,,,
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Answer Question",2025-11-24T18:41:17.495059363,"History",100,"George Washington","Correct",100
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Select Question",2025-11-24T18:41:48.814960108,"Science",200,,,
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Answer Question",2025-11-24T18:41:59.405492441,"Science",200,"Venus","Incorrect",0
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Select Question",2025-11-24T18:42:08.294961973,"Geography",100,,,
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Answer Question",2025-11-24T18:42:13.285994368,"Geography",100,"Paris","Correct",200
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Select Question",2025-11-24T18:42:54.090496734,"History",200,,,
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"1","Answer Question",2025-11-24T18:42:58.896536899,"History",200,"1945","Correct",200
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Select Question",2025-11-24T18:43:05.120073021,"Science",100,,,
-1c681a1c-11a6-4c10-99be-8f6ee73ae0ea,"2","Answer Question",2025-11-24T18:43:10.584737387,"Science",100,"H20","Incorrect",100
+GAME6,"System","Start Game",2025-11-26T00:03:40.086628053,,,,,
+GAME6,"P1","Enter Player Name",2025-11-26T00:03:45.917124819,,,"Jason",,
+GAME6,"P2","Enter Player Name",2025-11-26T00:03:49.427950445,,,"Daniel",,
+GAME6,"P3","Enter Player Name",2025-11-26T00:03:50.996607965,,,"Aux",,
+GAME6,"System","Select Player Count",2025-11-26T00:03:50.996650555,,,"3",,
+GAME6,"System","Load File",2025-11-26T00:03:50.997921304,,,,"Success",
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,,"Start Game",2025-11-26T00:03:51.035338553,,,,,
+GAME6,"P1","Select Category",2025-11-26T00:03:56.016229839,"File Handling",,,,
+GAME6,"P1","Select Question",2025-11-26T00:03:57.799310915,"File Handling",500,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Select Question",2025-11-26T00:03:57.799392527,"File Handling",500,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Answer Question",2025-11-26T00:04:06.376870045,"File Handling",500,"d","Incorrect",0
+GAME6,"P1","Score Updated",2025-11-26T00:04:06.376932602,,,,,0
+GAME6,"P2","Select Category",2025-11-26T00:04:11.985135796,"Functions",,,,
+GAME6,"P2","Select Question",2025-11-26T00:04:13.745685892,"Functions",100,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Select Question",2025-11-26T00:04:13.745746125,"Functions",100,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Answer Question",2025-11-26T00:04:17.039670345,"Functions",100,"c","Incorrect",0
+GAME6,"P2","Score Updated",2025-11-26T00:04:17.039709057,,,,,0
+GAME6,"P3","Select Category",2025-11-26T00:04:24.246689674,"File Handling",,,,
+GAME6,"P3","Select Question",2025-11-26T00:04:27.392029561,"File Handling",200,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Select Question",2025-11-26T00:04:27.39207754,"File Handling",200,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Answer Question",2025-11-26T00:04:30.115055261,"File Handling",200,"d","Incorrect",0
+GAME6,"P3","Score Updated",2025-11-26T00:04:30.115085637,,,,,0
+GAME6,"P1","Select Category",2025-11-26T00:04:33.07065975,"File Handling",,,,
+GAME6,"P1","Select Question",2025-11-26T00:04:36.117568718,"File Handling",100,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Select Question",2025-11-26T00:04:36.117603743,"File Handling",100,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Answer Question",2025-11-26T00:04:43.452384,"File Handling",100,"b","Incorrect",0
+GAME6,"P1","Score Updated",2025-11-26T00:04:43.452419747,,,,,0
+GAME6,"P2","Select Category",2025-11-26T00:04:49.701977131,"Functions",,,,
+GAME6,"P2","Select Question",2025-11-26T00:04:50.894350301,"Functions",200,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Select Question",2025-11-26T00:04:50.894384324,"Functions",200,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Answer Question",2025-11-26T00:04:57.286291744,"Functions",200,"b","Correct",200
+GAME6,"P2","Score Updated",2025-11-26T00:04:57.286341988,,,,,200
+GAME6,"P3","Select Category",2025-11-26T00:05:03.288046116,"File Handling",,,,
+GAME6,"P3","Select Question",2025-11-26T00:05:04.958142791,"File Handling",300,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Select Question",2025-11-26T00:05:04.958188757,"File Handling",300,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Answer Question",2025-11-26T00:05:13.063020307,"File Handling",300,"c","Correct",300
+GAME6,"P3","Score Updated",2025-11-26T00:05:13.063058188,,,,,300
+GAME6,"P1","Select Category",2025-11-26T00:05:20.165679298,"Control Structures",,,,
+GAME6,"P1","Select Question",2025-11-26T00:05:22.669160662,"Control Structures",200,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Select Question",2025-11-26T00:05:22.669217628,"Control Structures",200,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Answer Question",2025-11-26T00:05:47.83724076,"Control Structures",200,"b","Correct",200
+GAME6,"P1","Score Updated",2025-11-26T00:05:47.837282017,,,,,200
+GAME6,"P2","Select Category",2025-11-26T00:05:54.982024844,"Control Structures",,,,
+GAME6,"P2","Select Question",2025-11-26T00:05:56.387879861,"Control Structures",100,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Select Question",2025-11-26T00:05:56.387914165,"Control Structures",100,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Answer Question",2025-11-26T00:06:13.037040694,"Control Structures",100,"a","Correct",300
+GAME6,"P2","Score Updated",2025-11-26T00:06:13.037079877,,,,,300
+GAME6,"P3","Select Category",2025-11-26T00:06:24.467971282,"Functions",,,,
+GAME6,"P3","Select Question",2025-11-26T00:06:26.548661991,"Functions",500,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Select Question",2025-11-26T00:06:26.548695623,"Functions",500,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Answer Question",2025-11-26T00:06:37.956401325,"Functions",500,"c","Incorrect",0
+GAME6,"P3","Score Updated",2025-11-26T00:06:37.956433375,,,,,0
+GAME6,"P1","Select Category",2025-11-26T00:06:52.123818945,"File Handling",,,,
+GAME6,"P1","Select Question",2025-11-26T00:06:56.162531262,"File Handling",400,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Select Question",2025-11-26T00:06:56.162574823,"File Handling",400,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Answer Question",2025-11-26T00:07:00.131332308,"File Handling",400,"b","Incorrect",0
+GAME6,"P1","Score Updated",2025-11-26T00:07:00.131362805,,,,,0
+GAME6,"P2","Select Category",2025-11-26T00:07:11.701107988,"Functions",,,,
+GAME6,"P2","Select Question",2025-11-26T00:07:14.490697931,"Functions",300,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Select Question",2025-11-26T00:07:14.490737555,"Functions",300,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Answer Question",2025-11-26T00:07:20.419498252,"Functions",300,"a","Correct",600
+GAME6,"P2","Score Updated",2025-11-26T00:07:20.419533408,,,,,600
+GAME6,"P3","Select Category",2025-11-26T00:07:28.466557529,"Functions",,,,
+GAME6,"P3","Select Question",2025-11-26T00:07:30.602691676,"Functions",400,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Select Question",2025-11-26T00:07:30.602730468,"Functions",400,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Answer Question",2025-11-26T00:07:47.785865977,"Functions",400,"b","Correct",400
+GAME6,"P3","Score Updated",2025-11-26T00:07:47.785904168,,,,,400
+GAME6,"P1","Select Category",2025-11-26T00:07:55.257615589,"Arrays",,,,
+GAME6,"P1","Select Question",2025-11-26T00:07:57.657970499,"Arrays",100,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Select Question",2025-11-26T00:07:57.658002508,"Arrays",100,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Answer Question",2025-11-26T00:08:01.344020442,"Arrays",100,"a","Correct",100
+GAME6,"P1","Score Updated",2025-11-26T00:08:01.344055147,,,,,100
+GAME6,"P2","Select Category",2025-11-26T00:08:06.824400018,"Variables & Data Types",,,,
+GAME6,"P2","Select Question",2025-11-26T00:08:16.222114774,"Variables & Data Types",100,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Select Question",2025-11-26T00:08:16.222147315,"Variables & Data Types",100,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Answer Question",2025-11-26T00:08:27.454632739,"Variables & Data Types",100,"a","Correct",700
+GAME6,"P2","Score Updated",2025-11-26T00:08:27.454673616,,,,,700
+GAME6,"P3","Select Category",2025-11-26T00:08:33.111386363,"Control Structures",,,,
+GAME6,"P3","Select Question",2025-11-26T00:08:37.440556869,"Control Structures",500,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Select Question",2025-11-26T00:08:37.440596202,"Control Structures",500,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Answer Question",2025-11-26T00:08:46.285940184,"Control Structures",500,"b","Correct",900
+GAME6,"P3","Score Updated",2025-11-26T00:08:46.28597015,,,,,900
+GAME6,"P1","Select Category",2025-11-26T00:08:51.16005621,"Arrays",,,,
+GAME6,"P1","Select Question",2025-11-26T00:08:53.343521237,"Arrays",500,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Select Question",2025-11-26T00:08:53.343588632,"Arrays",500,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Answer Question",2025-11-26T00:09:02.462616694,"Arrays",500,"b","Correct",600
+GAME6,"P1","Score Updated",2025-11-26T00:09:02.462646109,,,,,600
+GAME6,"P2","Select Category",2025-11-26T00:09:08.100842002,"Control Structures",,,,
+GAME6,"P2","Select Question",2025-11-26T00:09:11.037855712,"Control Structures",300,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Select Question",2025-11-26T00:09:11.037884796,"Control Structures",300,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Answer Question",2025-11-26T00:09:25.46160044,"Control Structures",300,"a","Incorrect",400
+GAME6,"P2","Score Updated",2025-11-26T00:09:25.461633592,,,,,400
+GAME6,"P3","Select Category",2025-11-26T00:09:39.167701537,"Arrays",,,,
+GAME6,"P3","Select Question",2025-11-26T00:09:41.783736785,"Arrays",200,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Select Question",2025-11-26T00:09:41.783785246,"Arrays",200,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Answer Question",2025-11-26T00:09:49.759707777,"Arrays",200,"b","Correct",1100
+GAME6,"P3","Score Updated",2025-11-26T00:09:49.759760846,,,,,1100
+GAME6,"P1","Select Category",2025-11-26T00:09:55.258519376,"Arrays",,,,
+GAME6,"P1","Select Question",2025-11-26T00:09:56.933214588,"Arrays",300,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Select Question",2025-11-26T00:09:56.933245286,"Arrays",300,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Answer Question",2025-11-26T00:10:01.088521383,"Arrays",300,"a","Incorrect",300
+GAME6,"P1","Score Updated",2025-11-26T00:10:01.088553493,,,,,300
+GAME6,"P2","Select Category",2025-11-26T00:10:07.662816845,"Variables & Data Types",,,,
+GAME6,"P2","Select Question",2025-11-26T00:10:13.712751101,"Variables & Data Types",500,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Select Question",2025-11-26T00:10:13.712786758,"Variables & Data Types",500,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Answer Question",2025-11-26T00:10:16.988996105,"Variables & Data Types",500,"b","Correct",900
+GAME6,"P2","Score Updated",2025-11-26T00:10:16.989031431,,,,,900
+GAME6,"P3","Select Category",2025-11-26T00:10:29.704382042,"Arrays",,,,
+GAME6,"P3","Select Question",2025-11-26T00:10:31.304976092,"Arrays",400,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Select Question",2025-11-26T00:10:31.305008032,"Arrays",400,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Answer Question",2025-11-26T00:10:39.924953561,"Arrays",400,"c","Incorrect",700
+GAME6,"P3","Score Updated",2025-11-26T00:10:39.924991973,,,,,700
+GAME6,"P1","Select Category",2025-11-26T00:10:43.197949527,"Variables & Data Types",,,,
+GAME6,"P1","Select Question",2025-11-26T00:10:46.367130673,"Variables & Data Types",200,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Select Question",2025-11-26T00:10:46.36716137,"Variables & Data Types",200,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Answer Question",2025-11-26T00:10:50.403358341,"Variables & Data Types",200,"b","Correct",500
+GAME6,"P1","Score Updated",2025-11-26T00:10:50.403392244,,,,,500
+GAME6,"P2","Select Category",2025-11-26T00:10:54.926704042,"Control Structures",,,,
+GAME6,"P2","Select Question",2025-11-26T00:10:57.637228817,"Control Structures",400,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Select Question",2025-11-26T00:10:57.637266077,"Control Structures",400,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P2","Answer Question",2025-11-26T00:11:04.814823383,"Control Structures",400,"b","Incorrect",500
+GAME6,"P2","Score Updated",2025-11-26T00:11:04.814853229,,,,,500
+GAME6,"P3","Select Category",2025-11-26T00:11:09.981772584,"Variables & Data Types",,,,
+GAME6,"P3","Select Question",2025-11-26T00:11:11.474778458,"Variables & Data Types",400,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Select Question",2025-11-26T00:11:11.474814645,"Variables & Data Types",400,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P3","Answer Question",2025-11-26T00:11:18.95795395,"Variables & Data Types",400,"b","Correct",1100
+GAME6,"P3","Score Updated",2025-11-26T00:11:18.95799666,,,,,1100
+GAME6,"P1","Select Category",2025-11-26T00:11:22.39777879,"Variables & Data Types",,,,
+GAME6,"P1","Select Question",2025-11-26T00:11:24.045116925,"Variables & Data Types",300,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Select Question",2025-11-26T00:11:24.045171146,"Variables & Data Types",300,,,
+b24b9769-11c7-4212-9f01-5fa5e4ec1acd,"P1","Answer Question",2025-11-26T00:11:33.868258325,"Variables & Data Types",300,"a","Correct",800
+GAME6,"P1","Score Updated",2025-11-26T00:11:33.868303449,,,,,800

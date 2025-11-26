@@ -3,17 +3,18 @@ JEOPARDY GAME REPORT
 
 FINAL SCORES:
 -------------
-Jason: $200
-'Josh: $100
+Jason: $800
+Daniel: $500
+Aux: $1100
 
 GAME STATISTICS:
 ----------------
-Questions Answered: 6/6
+Questions Answered: 25/25
 
-WINNER: Jason with $200
+WINNER: Aux with $1100
 
 TURN HISTORY:
 -------------
 Turn-by-turn history would be displayed here.
 
-Report generated on: 2025-11-24T18:43:11.594617413
+Report generated on: 2025-11-26T00:11:33.877282043

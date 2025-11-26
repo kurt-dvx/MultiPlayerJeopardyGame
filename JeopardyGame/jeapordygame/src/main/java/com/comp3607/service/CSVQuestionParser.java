@@ -8,33 +8,54 @@ public class CSVQuestionParser implements QuestionParser {
     @Override
     public List<Question> parse(String filePath) {
         List<Question> questions = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            boolean firstLine = true;
-            
-            while ((line = br.readLine()) != null) {
-                if (firstLine) {
-                    firstLine = false;
-                    continue; // Skip header
-                }
-                
-                // Split by comma but handle quoted fields
-                String[] values = parseCSVLine(line);
-                if (values.length >= 8) {
-                    String category = values[0].trim();
-                    int value = Integer.parseInt(values[1].trim());
-                    String questionText = values[2].trim();
-                    
-                    // Build the full question text with options
-                    String fullQuestion = buildMultipleChoiceQuestion(questionText, values);
-                    String correctAnswer = values[7].trim(); // CorrectAnswer column
-                    
-                    questions.add(new Question(category, value, fullQuestion, correctAnswer));
-                }
+        
+        // Try to load from classpath first
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
+        
+        if (inputStream != null) {
+            // File found in classpath (src/main/resources/)
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
+                questions = parseFromReader(br);
+                System.out.println("✓ Loaded questions from classpath: " + filePath);
+            } catch (Exception e) {
+                System.err.println("Error parsing CSV from classpath: " + e.getMessage());
             }
-        } catch (Exception e) {
-            System.err.println("Error parsing CSV file: " + e.getMessage());
-            e.printStackTrace();
+        } else {
+            // Try as direct file path
+            try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+                questions = parseFromReader(br);
+                System.out.println("✓ Loaded questions from file path: " + filePath);
+            } catch (Exception e) {
+                System.err.println("Error parsing CSV file: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        
+        return questions;
+    }
+    
+    private List<Question> parseFromReader(BufferedReader br) throws IOException {
+        List<Question> questions = new ArrayList<>();
+        String line;
+        boolean firstLine = true;
+        
+        while ((line = br.readLine()) != null) {
+            if (firstLine) {
+                firstLine = false;
+                continue; // Skip header
+            }
+            
+            String[] values = parseCSVLine(line);
+            if (values.length >= 8) {
+                String category = values[0].trim();
+                int value = Integer.parseInt(values[1].trim());
+                String questionText = values[2].trim();
+                
+                String fullQuestion = buildMultipleChoiceQuestion(questionText, values);
+                String correctAnswer = values[7].trim();
+                
+                questions.add(new Question(category, value, fullQuestion, correctAnswer));
+            }
         }
         return questions;
     }
@@ -42,10 +63,10 @@ public class CSVQuestionParser implements QuestionParser {
     private String buildMultipleChoiceQuestion(String questionText, String[] values) {
         StringBuilder fullQuestion = new StringBuilder(questionText);
         fullQuestion.append("\n");
-        fullQuestion.append("A. ").append(values[3].trim()).append("\n"); // OptionA
-        fullQuestion.append("B. ").append(values[4].trim()).append("\n"); // OptionB  
-        fullQuestion.append("C. ").append(values[5].trim()).append("\n"); // OptionC
-        fullQuestion.append("D. ").append(values[6].trim()); // OptionD
+        fullQuestion.append("A. ").append(values[3].trim()).append("\n");
+        fullQuestion.append("B. ").append(values[4].trim()).append("\n");  
+        fullQuestion.append("C. ").append(values[5].trim()).append("\n");
+        fullQuestion.append("D. ").append(values[6].trim());
         return fullQuestion.toString();
     }
     
@@ -64,7 +85,7 @@ public class CSVQuestionParser implements QuestionParser {
                 currentValue.append(c);
             }
         }
-        values.add(currentValue.toString()); // Add last value
+        values.add(currentValue.toString());
         
         return values.toArray(new String[0]);
     }
