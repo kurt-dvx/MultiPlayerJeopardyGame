@@ -142,4 +142,24 @@ public class ConsoleUI {
         System.out.println("\n🏆 WINNER: " + winner.getName() + " with $" + winner.getScore() + "!");
         System.out.println("=".repeat(50));
     }
+
+    public void showCurrentScores(GameService gameService) {
+        System.out.println("\n" + "=".repeat(50));
+        System.out.println("🛑 GAME STOPPED EARLY");
+        System.out.println("=".repeat(50));
+        System.out.println("📊 CURRENT SCORES:");
+        
+        List<Player> players = gameService.getPlayers();
+        Player leader = players.get(0);
+        
+        for (Player player : players) {
+            System.out.println("   " + player.getName() + ": $" + player.getScore());
+            if (player.getScore() > leader.getScore()) {
+                leader = player;
+            }
+        }
+        
+        System.out.println("\n🏅 CURRENT LEADER: " + leader.getName() + " with $" + leader.getScore() + "!");
+        System.out.println("=".repeat(50));
+    }
 }

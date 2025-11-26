@@ -5,13 +5,40 @@ import com.comp3607.factory.QuestionParserFactory;
 import com.comp3607.observer.GameNotifier;
 import com.comp3607.strategy.ReportGenerator;
 import com.comp3607.strategy.TextReportGenerator;
+import com.comp3607.UI.JeopardyFrame;
 import com.comp3607.UI.ConsoleUI;
 import com.comp3607.model.Player;
 import com.comp3607.model.Question;
+import javax.swing.*;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        // Check if GUI mode is requested
+        if (args.length > 0 && args[0].equalsIgnoreCase("gui")) {
+            launchGUI();
+        } else {
+            launchConsole();
+        }
+    }
+    
+    private static void launchGUI() {
+        // Use SwingUtilities to ensure thread safety
+        SwingUtilities.invokeLater(() -> {
+            try {
+                // Set system look and feel - CORRECTED
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            
+            // Launch the GUI
+            JeopardyFrame frame = new JeopardyFrame();
+            frame.setVisible(true);
+        });
+    }
+    
+    private static void launchConsole() {
         Scanner scanner = new Scanner(System.in);
         EventLogService logService = new EventLogService();
         ConsoleUI ui = new ConsoleUI(logService, scanner);
@@ -77,6 +104,12 @@ public class Main {
             
             String category = ui.selectCategory(gameService, currentPlayer);
             if (category == null) continue;
+            if ("QUIT".equals(category)) {
+                System.out.println("🛑 Game quit by user");
+                logService.logSystemEvent("Game Quit Early");
+                ui.showCurrentScores(gameService);
+                return;
+            }
             
             int value = ui.selectQuestionValue(gameService, category, currentPlayer);
             if (value == -1) continue;
@@ -85,6 +118,15 @@ public class Main {
             if (question == null) continue;
             
             String answer = ui.askQuestion(question, category, value);
+            
+            // Check for quit command during answer
+            if ("quit".equalsIgnoreCase(answer) || "exit".equalsIgnoreCase(answer)) {
+                System.out.println("🛑 Game quit by user");
+                logService.logSystemEvent("Game Quit Early");
+                ui.showCurrentScores(gameService);
+                return;
+            }
+            
             boolean isCorrect = gameService.submitAnswer(answer);
             
             logService.logScoreUpdate(currentPlayer.getId(), currentPlayer.getScore());
