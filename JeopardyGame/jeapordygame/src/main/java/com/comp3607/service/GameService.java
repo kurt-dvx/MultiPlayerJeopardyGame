@@ -84,6 +84,16 @@ public class GameService {
             currentPlayer.addScore(-currentQuestion.getValue());
         }
         
+        String turnInfo = String.format("%s: %s - $%d - Answer: '%s' - %s - Score: $%d",
+            currentPlayer.getName(),
+            currentQuestion.getCategory(),
+            currentQuestion.getValue(),
+            answer,
+            isCorrect ? "Correct" : "Wrong",
+            currentPlayer.getScore()
+        );
+        session.addTurnHistory(turnInfo);
+        
         GameEvent event = new GameEventBuilder(caseId, "Answer Question")
             .withPlayerId(currentPlayer.getId())
             .withCategory(currentQuestion.getCategory())

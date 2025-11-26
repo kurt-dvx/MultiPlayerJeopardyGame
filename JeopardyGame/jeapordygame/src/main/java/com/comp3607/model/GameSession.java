@@ -6,11 +6,13 @@ public class GameSession {
     private List<Player> players;
     private List<Question> questions;
     private int currentPlayerIndex;
+    private List<String> turnHistory;
     
     public GameSession(List<Player> players, List<Question> questions) {
         this.players = players;
         this.questions = questions;
         this.currentPlayerIndex = 0;
+        this.turnHistory = new ArrayList<>();
     }
     
     public void nextTurn() {
@@ -21,6 +23,28 @@ public class GameSession {
         return players.get(currentPlayerIndex);
     }
     
-    public List<Player> getPlayers() { return players; }
-    public List<Question> getQuestions() { return questions; }
+    public List<Player> getPlayers() { 
+        return players; 
+    }
+    
+    public List<Question> getQuestions() { 
+        return questions; 
+    }
+    
+    // Turn history methods
+    public void addTurnHistory(String turnInfo) {
+        turnHistory.add(turnInfo);
+    }
+    
+    public List<String> getTurnHistory() {
+        return new ArrayList<>(turnHistory); // Return copy to prevent modification
+    }
+    
+    public void clearTurnHistory() {
+        turnHistory.clear();
+    }
+    
+    public int getTurnCount() {
+        return turnHistory.size();
+    }
 }

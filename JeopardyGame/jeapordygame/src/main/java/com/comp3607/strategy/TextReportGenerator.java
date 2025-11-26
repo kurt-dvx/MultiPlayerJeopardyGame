@@ -42,11 +42,17 @@ public class TextReportGenerator implements ReportGenerator {
             }
             writer.write("\n");
             
-            // Turn History (if available)
+            // Turn History Section
             writer.write("TURN HISTORY:\n");
             writer.write("-------------\n");
-            // This would need access to turn history from GameSession
-            writer.write("Turn-by-turn history would be displayed here.\n");
+            List<String> turnHistory = session.getTurnHistory();
+            if (turnHistory != null && !turnHistory.isEmpty()) {
+                for (int i = 0; i < turnHistory.size(); i++) {
+                    writer.write("Turn " + (i + 1) + ": " + turnHistory.get(i) + "\n");
+                }
+            } else {
+                writer.write("Turn-by-turn history would be displayed here.\n");
+            }
             writer.write("\n");
             
             writer.write("Report generated on: " + java.time.LocalDateTime.now() + "\n");
@@ -61,7 +67,7 @@ public class TextReportGenerator implements ReportGenerator {
     
     private Player findWinner(List<Player> players) {
         if (players == null || players.isEmpty()) {
-            return null; // or create a dummy player
+            return null;
         }
         
         Player winner = players.get(0);

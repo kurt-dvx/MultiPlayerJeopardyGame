@@ -3,18 +3,41 @@ JEOPARDY GAME REPORT
 
 FINAL SCORES:
 -------------
-Jason: $800
-Daniel: $500
-Aux: $1100
+Jason: $2700
+Amelia: $1500
 
 GAME STATISTICS:
 ----------------
 Questions Answered: 25/25
 
-WINNER: Aux with $1100
+WINNER: Jason with $2700
 
 TURN HISTORY:
 -------------
-Turn-by-turn history would be displayed here.
+Turn 1: Jason: File Handling - $100 - Answer: 'a' - Correct - Score: $100
+Turn 2: Amelia: Functions - $100 - Answer: 'a' - Wrong - Score: $0
+Turn 3: Jason: Arrays - $500 - Answer: 'b' - Correct - Score: $600
+Turn 4: Amelia: Functions - $500 - Answer: 'c' - Wrong - Score: $0
+Turn 5: Jason: Arrays - $400 - Answer: 'a' - Wrong - Score: $200
+Turn 6: Amelia: Functions - $400 - Answer: 'a' - Wrong - Score: $0
+Turn 7: Jason: File Handling - $300 - Answer: 'c' - Correct - Score: $500
+Turn 8: Amelia: Arrays - $200 - Answer: 'b' - Correct - Score: $200
+Turn 9: Jason: File Handling - $200 - Answer: 'b' - Correct - Score: $700
+Turn 10: Amelia: File Handling - $500 - Answer: 'd' - Wrong - Score: $0
+Turn 11: Jason: Functions - $300 - Answer: 'a' - Correct - Score: $1000
+Turn 12: Amelia: Arrays - $300 - Answer: 'c' - Correct - Score: $300
+Turn 13: Jason: Arrays - $100 - Answer: 'd' - Wrong - Score: $900
+Turn 14: Amelia: File Handling - $400 - Answer: 'c' - Correct - Score: $700
+Turn 15: Jason: Control Structures - $500 - Answer: 'b' - Correct - Score: $1400
+Turn 16: Amelia: Functions - $200 - Answer: 'b' - Correct - Score: $900
+Turn 17: Jason: Control Structures - $400 - Answer: 'd' - Correct - Score: $1800
+Turn 18: Amelia: Variables & Data Types - $300 - Answer: 'a' - Correct - Score: $1200
+Turn 19: Jason: Variables & Data Types - $500 - Answer: 'b' - Correct - Score: $2300
+Turn 20: Amelia: Control Structures - $200 - Answer: 'b' - Correct - Score: $1400
+Turn 21: Jason: Variables & Data Types - $100 - Answer: 'a' - Correct - Score: $2400
+Turn 22: Amelia: Control Structures - $300 - Answer: 'a' - Wrong - Score: $1100
+Turn 23: Jason: Control Structures - $100 - Answer: 'a' - Correct - Score: $2500
+Turn 24: Amelia: Variables & Data Types - $400 - Answer: 'b' - Correct - Score: $1500
+Turn 25: Jason: Variables & Data Types - $200 - Answer: 'b' - Correct - Score: $2700
 
-Report generated on: 2025-11-26T00:11:33.877282043
+Report generated on: 2025-11-26T15:37:05.038100310
