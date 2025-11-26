@@ -2,35 +2,59 @@ package com.comp3607.UI;
 
 import com.comp3607.service.GameService;
 import com.comp3607.service.EventLogService;
+import com.comp3607.strategy.InputStrategy;
+import com.comp3607.strategy.OutputStrategy;
+import com.comp3607.strategy.ConsoleIOStrategy;
 import com.comp3607.model.Player;
 import com.comp3607.model.Question;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class ConsoleUI {
+public class ConsoleUI implements GameUI {
     private EventLogService logService;
-    private Scanner scanner;
+    private InputStrategy input;
+    private OutputStrategy output;
     
-    public ConsoleUI(EventLogService logService, Scanner scanner) {
+    // UPDATED CONSTRUCTOR - uses strategies instead of Scanner
+    public ConsoleUI(EventLogService logService, InputStrategy input, OutputStrategy output) {
         this.logService = logService;
-        this.scanner = scanner;
+        this.input = input;
+        this.output = output;
     }
     
+    // OLD CONSTRUCTOR
+    public ConsoleUI(EventLogService logService, java.util.Scanner scanner) {
+        this(logService, new ConsoleIOStrategy(scanner), new ConsoleIOStrategy(scanner));
+    }
+    
+    @Override
     public void displayWelcome() {
-        System.out.println("Jeopardy Game Starting...");
+        output.displayBanner("Jeopardy Game Starting...");
     }
     
+    @Override
     public List<Player> setupPlayers() {
         List<Player> players = new ArrayList<>();
         
-        System.out.print("Enter number of players (1-4): ");
-        int playerCount = Integer.parseInt(scanner.nextLine());
+        int playerCount = 0;
+        boolean validInput = false;
+        
+        while (!validInput) {
+            try {
+                playerCount = input.readInt("Enter number of players (1-4): ");
+                if (playerCount >= 1 && playerCount <= 4) {
+                    validInput = true;
+                } else {
+                    output.displayError("Please enter a number between 1 and 4");
+                }
+            } catch (IllegalArgumentException e) {
+                output.displayError(e.getMessage());
+            }
+        }
         
         for (int i = 0; i < playerCount; i++) {
-            System.out.print("Enter name for Player " + (i + 1) + ": ");
-            String name = scanner.nextLine();
+            String name = input.readLine("Enter name for Player " + (i + 1) + ": ");
             if (name.trim().isEmpty()) {
                 name = "Player " + (i + 1);
             }
@@ -41,29 +65,28 @@ public class ConsoleUI {
         }
         
         logService.logPlayerCount(players.size());
-        System.out.println("✓ Players setup: " + players.size() + " players ready");
+        output.displayFormatted("Players setup: " + players.size() + " players ready");
         return players;
     }
     
+    @Override
     public void displayPlayerTurn(Player player) {
-        System.out.println("\n" + "─".repeat(40));
-        System.out.println("🎯 " + player.getName() + "'s Turn");
-        System.out.println("💰 Current Score: $" + player.getScore());
-        System.out.println("─".repeat(40));
+        output.displayBanner(player.getName() + "'s Turn");
+        output.display("💰 Current Score: $" + player.getScore());
     }
     
+    @Override
     public String selectCategory(GameService gameService, Player player) {
         List<String> categories = gameService.getCategories();
-        System.out.println("📚 Available Categories:");
+        output.display("📚 Available Categories:");
         for (int i = 0; i < categories.size(); i++) {
-            System.out.println("   " + (i + 1) + ". " + categories.get(i));
+            output.display("   " + (i + 1) + ". " + categories.get(i));
         }
         
-        System.out.print("👉 Choose a category (1-" + categories.size() + "): ");
         try {
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = input.readInt("👉 Choose a category (1-" + categories.size() + "): ");
             if (choice < 1 || choice > categories.size()) {
-                System.out.println("❌ Invalid choice.");
+                output.displayError("Invalid choice. Please select a valid category.");
                 return null;
             }
             
@@ -71,24 +94,24 @@ public class ConsoleUI {
             logService.logCategorySelection(player.getId(), selectedCategory);
             return selectedCategory;
             
-        } catch (NumberFormatException e) {
-            System.out.println("❌ Invalid choice. Please enter a number.");
+        } catch (IllegalArgumentException e) {
+            output.displayError("Invalid choice. Please enter a number.");
             return null;
         }
     }
     
+    @Override
     public int selectQuestionValue(GameService gameService, String category, Player player) {
         List<Integer> values = gameService.getAvailableValues(category);
-        System.out.println("💰 Available Values for " + category + ":");
+        output.display("💰 Available Values for " + category + ":");
         for (int i = 0; i < values.size(); i++) {
-            System.out.println("   " + (i + 1) + ". $" + values.get(i));
+            output.display("   " + (i + 1) + ". $" + values.get(i));
         }
         
-        System.out.print("👉 Choose a value (1-" + values.size() + "): ");
         try {
-            int choice = Integer.parseInt(scanner.nextLine());
+            int choice = input.readInt("👉 Choose a value (1-" + values.size() + "): ");
             if (choice < 1 || choice > values.size()) {
-                System.out.println("❌ Invalid choice.");
+                output.displayError("Invalid choice. Please select a valid value.");
                 return -1;
             }
             
@@ -96,70 +119,64 @@ public class ConsoleUI {
             logService.logQuestionSelection(player.getId(), category, selectedValue);
             return selectedValue;
             
-        } catch (NumberFormatException e) {
-            System.out.println("❌ Invalid choice. Please enter a number.");
+        } catch (IllegalArgumentException e) {
+            output.displayError("Invalid choice. Please enter a number.");
             return -1;
         }
     }
     
+    @Override
     public String askQuestion(Question question, String category, int value) {
-        System.out.println("\n" + "=".repeat(50));
-        System.out.println("❓ QUESTION (" + category + " - $" + value + "):");
-        System.out.println("=".repeat(50));
-        System.out.println(question.getQuestionText());
-        System.out.println("=".repeat(50));
-        System.out.print("💡 Your answer: ");
-        return scanner.nextLine();
+        output.displayBanner("QUESTION (" + category + " - $" + value + ")");
+        output.display(question.getQuestionText());
+        return input.readLine("💡 Your answer: ");
     }
     
+    @Override
     public void displayAnswerResult(boolean isCorrect, int value, Question question, Player player) {
         if (isCorrect) {
-            System.out.println("✅ CORRECT! +$" + value);
+            output.displayFormatted("✅ CORRECT! +$" + value);
         } else {
             int pointsLost = Math.min(value, player.getScore() + value);
-            System.out.println("❌ WRONG! -$" + pointsLost);
-            System.out.println("💡 Correct answer was: " + question.getAnswer());
+            output.displayError("❌ WRONG! -$" + pointsLost);
+            output.display("💡 Correct answer was: " + question.getAnswer());
         }
-        System.out.println("💰 New Score: $" + player.getScore());
+        output.display("💰 New Score: $" + player.getScore());
     }
     
+    @Override
     public void showFinalResults(GameService gameService) {
-        System.out.println("\n" + "=".repeat(50));
-        System.out.println("🏁 GAME OVER!");
-        System.out.println("=".repeat(50));
-        System.out.println("📊 FINAL SCORES:");
+        output.displayBanner("GAME OVER!");
+        output.display("📊 FINAL SCORES:");
         
         List<Player> players = gameService.getPlayers();
         Player winner = players.get(0);
         
         for (Player player : players) {
-            System.out.println("   " + player.getName() + ": $" + player.getScore());
+            output.display("   " + player.getName() + ": $" + player.getScore());
             if (player.getScore() > winner.getScore()) {
                 winner = player;
             }
         }
         
-        System.out.println("\n🏆 WINNER: " + winner.getName() + " with $" + winner.getScore() + "!");
-        System.out.println("=".repeat(50));
+        output.displayFormatted("🏆 WINNER: " + winner.getName() + " with $" + winner.getScore() + "!");
     }
 
+    @Override
     public void showCurrentScores(GameService gameService) {
-        System.out.println("\n" + "=".repeat(50));
-        System.out.println("🛑 GAME STOPPED EARLY");
-        System.out.println("=".repeat(50));
-        System.out.println("📊 CURRENT SCORES:");
+        output.displayBanner("GAME STOPPED EARLY");
+        output.display("📊 CURRENT SCORES:");
         
         List<Player> players = gameService.getPlayers();
         Player leader = players.get(0);
         
         for (Player player : players) {
-            System.out.println("   " + player.getName() + ": $" + player.getScore());
+            output.display("   " + player.getName() + ": $" + player.getScore());
             if (player.getScore() > leader.getScore()) {
                 leader = player;
             }
         }
         
-        System.out.println("\n🏅 CURRENT LEADER: " + leader.getName() + " with $" + leader.getScore() + "!");
-        System.out.println("=".repeat(50));
+        output.displayFormatted("🏅 CURRENT LEADER: " + leader.getName() + " with $" + leader.getScore() + "!");
     }
 }

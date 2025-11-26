@@ -5,6 +5,7 @@ import com.comp3607.factory.QuestionParserFactory;
 import com.comp3607.observer.GameNotifier;
 import com.comp3607.strategy.ReportGenerator;
 import com.comp3607.strategy.TextReportGenerator;
+import com.comp3607.strategy.ConsoleIOStrategy;
 import com.comp3607.UI.JeopardyFrame;
 import com.comp3607.UI.ConsoleUI;
 import com.comp3607.model.Player;
@@ -41,7 +42,10 @@ public class Main {
     private static void launchConsole() {
         Scanner scanner = new Scanner(System.in);
         EventLogService logService = new EventLogService();
-        ConsoleUI ui = new ConsoleUI(logService, scanner);
+        
+        // USE STRATEGY PATTERN - but functionality identical!
+        ConsoleIOStrategy ioStrategy = new ConsoleIOStrategy(scanner);
+        ConsoleUI ui = new ConsoleUI(logService, ioStrategy, ioStrategy);
         
         try {
             ui.displayWelcome();
