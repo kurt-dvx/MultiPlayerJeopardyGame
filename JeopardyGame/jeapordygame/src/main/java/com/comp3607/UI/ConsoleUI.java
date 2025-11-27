@@ -43,6 +43,7 @@ public class ConsoleUI implements GameUI {
         while (!validInput) {
             try {
                 playerCount = input.readInt("Enter number of players (1-4): ");
+                
                 if (playerCount >= 1 && playerCount <= 4) {
                     validInput = true;
                 } else {
@@ -84,7 +85,14 @@ public class ConsoleUI implements GameUI {
         }
         
         try {
-            int choice = input.readInt("👉 Choose a category (1-" + categories.size() + "): ");
+            String userInput = input.readLine("👉 Choose a category (1-" + categories.size() + ") or type 'QUIT' to end game: ");
+            
+            // SIMPLE QUIT CHECK - only "QUIT" works here
+            if ("QUIT".equalsIgnoreCase(userInput)) {
+                return "QUIT";
+            }
+            
+            int choice = Integer.parseInt(userInput);
             if (choice < 1 || choice > categories.size()) {
                 output.displayError("Invalid choice. Please select a valid category.");
                 return null;
@@ -94,8 +102,8 @@ public class ConsoleUI implements GameUI {
             logService.logCategorySelection(player.getId(), selectedCategory);
             return selectedCategory;
             
-        } catch (IllegalArgumentException e) {
-            output.displayError("Invalid choice. Please enter a number.");
+        } catch (NumberFormatException e) {
+            output.displayError("Invalid choice. Please enter a number or 'QUIT'.");
             return null;
         }
     }
@@ -129,7 +137,10 @@ public class ConsoleUI implements GameUI {
     public String askQuestion(Question question, String category, int value) {
         output.displayBanner("QUESTION (" + category + " - $" + value + ")");
         output.display(question.getQuestionText());
-        return input.readLine("💡 Your answer: ");
+        
+        // REMOVED quit instruction - no quitting during answers
+        String answer = input.readLine("💡 Your answer: ");
+        return answer;
     }
     
     @Override
@@ -164,7 +175,7 @@ public class ConsoleUI implements GameUI {
 
     @Override
     public void showCurrentScores(GameService gameService) {
-        output.displayBanner("GAME STOPPED EARLY");
+        output.displayBanner("GAME STOPPED - CURRENT SCORES");
         output.display("📊 CURRENT SCORES:");
         
         List<Player> players = gameService.getPlayers();
@@ -178,5 +189,6 @@ public class ConsoleUI implements GameUI {
         }
         
         output.displayFormatted("🏅 CURRENT LEADER: " + leader.getName() + " with $" + leader.getScore() + "!");
+        output.display("👋 Thanks for playing!");
     }
 }

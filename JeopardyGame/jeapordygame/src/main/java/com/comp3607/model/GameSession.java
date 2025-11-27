@@ -37,7 +37,7 @@ public class GameSession {
     }
     
     public List<String> getTurnHistory() {
-        return new ArrayList<>(turnHistory); // Return copy to prevent modification
+        return new ArrayList<>(turnHistory);
     }
     
     public void clearTurnHistory() {

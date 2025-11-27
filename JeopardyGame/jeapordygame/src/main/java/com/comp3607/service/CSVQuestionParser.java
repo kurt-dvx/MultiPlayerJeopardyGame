@@ -16,7 +16,7 @@ public class CSVQuestionParser extends AbstractQuestionParser {
             while ((line = br.readLine()) != null) {
                 if (firstLine) {
                     firstLine = false;
-                    continue; // Skip header
+                    continue;
                 }
                 
                 String[] values = parseCSVLine(line);

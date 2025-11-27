@@ -51,12 +51,12 @@ public class Player {
     // Business logic methods
     public void addScore(int points) {
         int newScore = this.score + points;
-        this.score = Math.max(0, newScore); // Never go below 0
+        this.score = Math.max(0, newScore);
     }
 
     public void subtractScore(int points) {
         int newScore = this.score - points;
-        this.score = Math.max(0, newScore); // Never go below 0
+        this.score = Math.max(0, newScore);
     }
     
     public void resetScore() {

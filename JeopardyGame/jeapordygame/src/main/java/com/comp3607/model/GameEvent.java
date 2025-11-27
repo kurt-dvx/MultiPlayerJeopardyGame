@@ -16,7 +16,7 @@ public abstract class GameEvent {
         this.timestamp = LocalDateTime.now();
     }
     
-    // Getters - ALL EXISTING CODE CAN STILL USE THESE
+    // Getters
     public String getCaseId() { return caseId; }
     public String getPlayerId() { return playerId; }
     public String getActivity() { return activity; }
@@ -25,7 +25,7 @@ public abstract class GameEvent {
     // Template Method Pattern for event formatting
     public abstract String getEventType();
     
-    // Default implementations for backward compatibility
+    // For backward compatibility
     public String getCategory() { return null; }
     public Integer getQuestionValue() { return null; }
     public String getAnswerGiven() { return null; }

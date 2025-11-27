@@ -35,7 +35,7 @@ public class JSONQuestionParser extends AbstractQuestionParser {
         List<Question> questions = new ArrayList<>();
 
         if (json.contains("questions") && json.contains("category")) {
-            // Add some sample questions for now
+            //sample questions for testing
             questions.add(new Question("Science", 100, "What is the chemical symbol for gold?", "Au"));
             questions.add(new Question("Science", 200, "How many bones in human body?", "206"));
         }

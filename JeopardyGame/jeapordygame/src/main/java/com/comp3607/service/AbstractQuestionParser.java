@@ -32,10 +32,8 @@ public abstract class AbstractQuestionParser implements QuestionParser {
     
     // COMMON IMPLEMENTATION - reusable by all subclasses
     protected InputStream getInputStream(String filePath) throws FileNotFoundException {
-        // Try classpath first (for resources in src/main/resources/)
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
         if (inputStream == null) {
-            // Try as direct file path
             inputStream = new FileInputStream(filePath);
         }
         return inputStream;

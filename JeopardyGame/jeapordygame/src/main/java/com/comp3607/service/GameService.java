@@ -9,7 +9,7 @@ public class GameService {
     private GameSession session;
     private GameNotifier notifier;
     private String caseId;
-    private Question currentQuestion; // ← MISSING FIELD
+    private Question currentQuestion;
     
     public GameService(GameNotifier notifier) {
         this.notifier = notifier;
@@ -19,12 +19,11 @@ public class GameService {
     public void startGame(List<Player> players, List<Question> questions) {
         this.session = new GameSession(players, questions);
         
-        // Use factory instead of builder
+        // Using factory method
         GameEvent event = GameEventFactory.createSystemEvent(caseId, "Start Game");
         notifier.notifyObservers(event);
     }
     
-    // ← MISSING METHOD: Get available categories
     public List<String> getCategories() {
         Set<String> categories = new HashSet<>();
         for (Question q : session.getQuestions()) {
@@ -35,7 +34,6 @@ public class GameService {
         return new ArrayList<>(categories);
     }
     
-    // ← MISSING METHOD: Get available values for category
     public List<Integer> getAvailableValues(String category) {
         Set<Integer> values = new HashSet<>();
         for (Question q : session.getQuestions()) {
@@ -46,7 +44,6 @@ public class GameService {
         return new ArrayList<>(values);
     }
     
-    // ← MISSING METHOD: Select question implementation
     public Question selectQuestion(String category, int value) {
         for (Question q : session.getQuestions()) {
             if (!q.isUsed() && q.getCategory().equals(category) && q.getValue() == value) {
@@ -64,7 +61,6 @@ public class GameService {
         return null;
     }
     
-    // ← MISSING METHOD: Answer evaluation
     private boolean evaluateAnswer(String answer) {
         return currentQuestion != null && currentQuestion.checkMultipleChoiceAnswer(answer);
     }
@@ -91,7 +87,7 @@ public class GameService {
         );
         session.addTurnHistory(turnInfo);
         
-        // Use factory instead of builder
+        // Using factory design pattern
         GameEvent event = GameEventFactory.createQuestionAnsweredEvent(
             caseId, currentPlayer.getId(), currentQuestion.getCategory(),
             currentQuestion.getValue(), answer, isCorrect, currentPlayer.getScore()
@@ -102,17 +98,14 @@ public class GameService {
     }
 
     
-    // ← MISSING METHOD: Next turn
     public void nextTurn() {
         session.nextTurn();
     }
     
-    // ← MISSING METHOD: Get current player
     public Player getCurrentPlayer() {
         return session.getCurrentPlayer();
     }
     
-    // ← MISSING METHOD: Check if game over
     public boolean isGameOver() {
         for (Question q : session.getQuestions()) {
             if (!q.isUsed()) {
@@ -122,12 +115,10 @@ public class GameService {
         return true;
     }
     
-    // ← MISSING METHOD: Get players
     public List<Player> getPlayers() {
         return session.getPlayers();
     }
     
-    // ← MISSING METHOD: Get session
     public GameSession getSession() {
         return session;
     }
