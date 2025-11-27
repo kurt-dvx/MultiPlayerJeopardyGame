@@ -16,14 +16,14 @@ public class ConsoleUI implements GameUI {
     private InputStrategy input;
     private OutputStrategy output;
     
-    // Updates constructor that uses strategies instead of Scanner
+    // Constructor that uses strategies instead of Scanner
     public ConsoleUI(EventLogService logService, InputStrategy input, OutputStrategy output) {
         this.logService = logService;
         this.input = input;
         this.output = output;
     }
     
-    // Old constructor for backward compatibility
+    // Constructor for backward compatibility
     public ConsoleUI(EventLogService logService, java.util.Scanner scanner) {
         this(logService, new ConsoleIOStrategy(scanner), new ConsoleIOStrategy(scanner));
     }
@@ -73,19 +73,19 @@ public class ConsoleUI implements GameUI {
     @Override
     public void displayPlayerTurn(Player player) {
         output.displayBanner(player.getName() + "'s Turn");
-        output.display("💰 Current Score: $" + player.getScore());
+        output.display("Current Score: $" + player.getScore());
     }
     
     @Override
     public String selectCategory(GameService gameService, Player player) {
         List<String> categories = gameService.getCategories();
-        output.display("📚 Available Categories:");
+        output.display("Available Categories:");
         for (int i = 0; i < categories.size(); i++) {
             output.display("   " + (i + 1) + ". " + categories.get(i));
         }
         
         try {
-            String userInput = input.readLine("👉 Choose a category (1-" + categories.size() + ") or type 'QUIT' to end game: ");
+            String userInput = input.readLine("Choose a category (1-" + categories.size() + ") or type 'QUIT' to end game: ");
             
             // SIMPLE QUIT CHECK - only "QUIT" works here
             if ("QUIT".equalsIgnoreCase(userInput)) {
@@ -111,13 +111,13 @@ public class ConsoleUI implements GameUI {
     @Override
     public int selectQuestionValue(GameService gameService, String category, Player player) {
         List<Integer> values = gameService.getAvailableValues(category);
-        output.display("💰 Available Values for " + category + ":");
+        output.display("Available Values for " + category + ":");
         for (int i = 0; i < values.size(); i++) {
             output.display("   " + (i + 1) + ". $" + values.get(i));
         }
         
         try {
-            int choice = input.readInt("👉 Choose a value (1-" + values.size() + "): ");
+            int choice = input.readInt("Choose a value (1-" + values.size() + "): ");
             if (choice < 1 || choice > values.size()) {
                 output.displayError("Invalid choice. Please select a valid value.");
                 return -1;
@@ -139,7 +139,7 @@ public class ConsoleUI implements GameUI {
         output.display(question.getQuestionText());
         
         // REMOVED quit instruction - no quitting during answers
-        String answer = input.readLine("💡 Your answer: ");
+        String answer = input.readLine("-> Your answer: ");
         return answer;
     }
     
@@ -152,13 +152,13 @@ public class ConsoleUI implements GameUI {
             output.displayError("❌ WRONG! -$" + pointsLost);
             output.display("💡 Correct answer was: " + question.getAnswer());
         }
-        output.display("💰 New Score: $" + player.getScore());
+        output.display("New Score: $" + player.getScore());
     }
     
     @Override
     public void showFinalResults(GameService gameService) {
         output.displayBanner("GAME OVER!");
-        output.display("📊 FINAL SCORES:");
+        output.display("-> FINAL SCORES:");
         
         List<Player> players = gameService.getPlayers();
         Player winner = players.get(0);
@@ -176,7 +176,7 @@ public class ConsoleUI implements GameUI {
     @Override
     public void showCurrentScores(GameService gameService) {
         output.displayBanner("GAME STOPPED - CURRENT SCORES");
-        output.display("📊 CURRENT SCORES:");
+        output.display("CURRENT SCORES:");
         
         List<Player> players = gameService.getPlayers();
         Player leader = players.get(0);
@@ -188,7 +188,7 @@ public class ConsoleUI implements GameUI {
             }
         }
         
-        output.displayFormatted("🏅 CURRENT LEADER: " + leader.getName() + " with $" + leader.getScore() + "!");
-        output.display("👋 Thanks for playing!");
+        output.displayFormatted("CURRENT LEADER: " + leader.getName() + " with $" + leader.getScore() + "!");
+        output.display("Thanks for playing!");
     }
 }

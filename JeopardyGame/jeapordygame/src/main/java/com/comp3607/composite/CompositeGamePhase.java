@@ -1,4 +1,3 @@
-// composite/CompositeGamePhase.java
 package com.comp3607.composite;
 
 import java.util.ArrayList;
@@ -20,22 +19,22 @@ public class CompositeGamePhase implements GamePhase {
     
     @Override
     public void execute() {
-        System.out.println("\n🚀 Starting phase: " + phaseName);
+        System.out.println("\nStarting phase: " + phaseName);
         successful = true;
         
         for (GamePhase phase : subPhases) {
             phase.execute();
             if (!phase.isSuccessful()) {
                 successful = false;
-                System.err.println("❌ Phase failed: " + phase.getPhaseName());
+                System.err.println("Phase failed: " + phase.getPhaseName());
                 break; // Stop execution if any phase fails
             }
         }
         
         if (successful) {
-            System.out.println("✅ Completed phase: " + phaseName);
+            System.out.println("Completed phase: " + phaseName);
         } else {
-            System.out.println("⚠️ Phase completed with errors: " + phaseName);
+            System.out.println("Phase completed with errors: " + phaseName);
         }
     }
     

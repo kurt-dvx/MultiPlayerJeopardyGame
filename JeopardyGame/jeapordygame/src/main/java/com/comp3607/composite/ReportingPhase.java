@@ -26,7 +26,7 @@ public class ReportingPhase implements GamePhase {
             reporter.generateReport(gameService.getSession(), GameConfig.TEXT_REPORT_FILE);
             logService.generateEventLog(GameConfig.EVENT_LOG_FILE);
             
-            System.out.println("✅ Reports generated: " + GameConfig.TEXT_REPORT_FILE + ", " + GameConfig.EVENT_LOG_FILE);
+            System.out.println("-> Reports generated: " + GameConfig.TEXT_REPORT_FILE + ", " + GameConfig.EVENT_LOG_FILE);
             successful = true;
             
         } catch (Exception e) {

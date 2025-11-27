@@ -1,4 +1,3 @@
-// config/GameConfig.java (SIMPLIFIED)
 package com.comp3607.config;
 
 import com.comp3607.strategy.ReportGenerator;

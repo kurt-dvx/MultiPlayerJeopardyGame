@@ -23,17 +23,17 @@ public class Main {
             boolean success = orchestrator.runGame();
             
             if (success) {
-                System.out.println("🎉 Game completed successfully!");
+                System.out.println("=> Game completed successfully!");
             } else {
-                System.out.println("⚠️ Game completed with issues");
+                System.out.println("Game completed with issues");
             }
             
         } catch (Exception e) {
-            System.err.println("❌ Fatal error: " + e.getMessage());
+            System.err.println("Fatal error: " + e.getMessage());
             e.printStackTrace();
         } finally {
             scanner.close();
-            System.out.println("👋 Thank you for playing Jeopardy!");
+            System.out.println("=> Thank you for playing Jeopardy!");
         }
     }
 }

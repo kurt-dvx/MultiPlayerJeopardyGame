@@ -1,4 +1,3 @@
-// factory/GameEventFactory.java
 package com.comp3607.factory;
 
 import com.comp3607.model.*;

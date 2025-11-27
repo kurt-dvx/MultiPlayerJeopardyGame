@@ -1,4 +1,3 @@
-// model/GameEvent.java
 package com.comp3607.model;
 
 import java.time.LocalDateTime;

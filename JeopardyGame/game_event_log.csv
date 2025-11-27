@@ -1,13 +1,8 @@
 Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
-GAME8568,"System","Start Game",2025-11-27T22:12:08.655289157,,,,,
-GAME8568,"System","Enter Player Name",2025-11-27T22:12:18.932835807,,,"Jason","Success",
-GAME8568,"System","Enter Player Name",2025-11-27T22:12:20.860337617,,,"Amelia","Success",
-GAME8568,"System","Select Player Count",2025-11-27T22:12:20.860427615,,,"2","Success",
-GAME8568,"System","Load File",2025-11-27T22:12:20.86150488,,,,"Success",
-fe39f82f-936a-49f8-809b-15d3d02c2e6e,"System","Start Game",2025-11-27T22:12:20.907667814,,,,,
-GAME8568,"P1","Select Category",2025-11-27T22:12:26.44729986,"Functions",,,,
-GAME8568,"P1","Select Question",2025-11-27T22:12:28.889080258,"Functions",400,,,
-fe39f82f-936a-49f8-809b-15d3d02c2e6e,"P1","Select Question",2025-11-27T22:12:28.889148816,"Functions",400,,,
-fe39f82f-936a-49f8-809b-15d3d02c2e6e,"P1","Answer Question",2025-11-27T22:12:47.599983528,"Functions",400,"b","Correct",400
-GAME8568,"P1","Score Updated",2025-11-27T22:12:47.600069879,,,,,400
-GAME8568,"System","Game Quit by Amelia",2025-11-27T22:15:38.97113684,,,,,
+GAME3726,"System","Start Game",2025-11-27T22:33:33.80582253,,,,,
+GAME3726,"System","Enter Player Name",2025-11-27T22:33:38.265436332,,,"Jason","Success",
+GAME3726,"System","Enter Player Name",2025-11-27T22:33:40.641432328,,,"Amelia","Success",
+GAME3726,"System","Select Player Count",2025-11-27T22:33:40.641488914,,,"2","Success",
+GAME3726,"System","Load File",2025-11-27T22:33:40.642483528,,,,"Success",
+dc2a723a-c699-45b1-9b3c-d5307be0783d,"System","Start Game",2025-11-27T22:33:40.686232378,,,,,
+GAME3726,"System","Game Quit by Jason",2025-11-27T22:33:43.585592469,,,,,

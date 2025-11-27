@@ -42,7 +42,7 @@ public class GameplayPhase implements GamePhase {
                 String category = ui.selectCategory(gameService, currentPlayer);
                 if (category == null) continue;
                 
-                // ONLY QUIT CHECK - at category selection
+                // Quit Check 
                 if ("QUIT".equals(category)) {
                     System.out.println("Game quit by " + currentPlayer.getName());
                     logService.logSystemEvent("Game Quit by " + currentPlayer.getName());
