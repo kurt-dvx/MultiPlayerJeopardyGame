@@ -3,17 +3,18 @@ JEOPARDY GAME REPORT
 
 FINAL SCORES:
 -------------
-Amelia: $0
-Nixon: $0
+Jason: $200
+Amelia: $500
 
 GAME STATISTICS:
 ----------------
-Questions Answered: 0/25
+Questions Answered: 2/25
 
-WINNER: Amelia with $0
+WINNER: Amelia with $500
 
 TURN HISTORY:
 -------------
-Turn by turn history not available.
+Turn 1: Jason: Arrays - $200 - Answer: 'b' - Correct - Score: $200
+Turn 2: Amelia: Functions - $500 - Answer: 'b' - Correct - Score: $500
 
-Report generated on: 2025-11-27T01:26:51.601145672
+Report generated on: 2025-11-27T02:41:48.064380011

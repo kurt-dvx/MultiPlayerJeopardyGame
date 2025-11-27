@@ -18,7 +18,7 @@ public class Main {
         ConsoleUI ui = new ConsoleUI(logService, ioStrategy, ioStrategy);
         
         try {
-            // USE THE ORCHESTRATOR - ALL GAME LOGIC IS NOW HERE!
+            // Using the orchestrator for all game logic 
             GameOrchestrator orchestrator = new GameOrchestrator(ui, logService);
             boolean success = orchestrator.runGame();
             

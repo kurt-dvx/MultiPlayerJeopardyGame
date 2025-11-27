@@ -16,14 +16,14 @@ public class ConsoleUI implements GameUI {
     private InputStrategy input;
     private OutputStrategy output;
     
-    // UPDATED CONSTRUCTOR - uses strategies instead of Scanner
+    // Updates constructor that uses strategies instead of Scanner
     public ConsoleUI(EventLogService logService, InputStrategy input, OutputStrategy output) {
         this.logService = logService;
         this.input = input;
         this.output = output;
     }
     
-    // OLD CONSTRUCTOR
+    // Old constructor for backward compatibility
     public ConsoleUI(EventLogService logService, java.util.Scanner scanner) {
         this(logService, new ConsoleIOStrategy(scanner), new ConsoleIOStrategy(scanner));
     }

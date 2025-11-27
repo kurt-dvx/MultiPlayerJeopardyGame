@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public abstract class AbstractQuestionParser implements QuestionParser {
     
-    // TEMPLATE METHOD PATTERN - defines the skeleton
+    // Template method pattern - defines the skeleton
     @Override
     public final List<Question> parse(String filePath) {
         List<Question> questions = new ArrayList<>();
@@ -26,11 +26,11 @@ public abstract class AbstractQuestionParser implements QuestionParser {
         return questions;
     }
     
-    // PRIMITIVE OPERATIONS - to be implemented by subclasses
+    // Primitive operations - to be implemented by subclasses
     protected abstract List<Question> parseFromStream(InputStream inputStream) throws IOException;
     protected abstract String getSupportedFormat();
     
-    // COMMON IMPLEMENTATION - reusable by all subclasses
+    // Common implementation - reusable by all subclasses
     protected InputStream getInputStream(String filePath) throws FileNotFoundException {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
         if (inputStream == null) {

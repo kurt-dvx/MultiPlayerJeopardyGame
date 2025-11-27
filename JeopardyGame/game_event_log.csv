@@ -1,8 +1,18 @@
 Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
-GAME6875,"System","Start Game",2025-11-27T01:23:16.958851895,,,,,
-GAME6875,"System","Enter Player Name",2025-11-27T01:23:21.211514572,,,"Amelia","Success",
-GAME6875,"System","Enter Player Name",2025-11-27T01:23:23.962011107,,,"Nixon","Success",
-GAME6875,"System","Select Player Count",2025-11-27T01:23:23.9620769,,,"2","Success",
-GAME6875,"System","Load File",2025-11-27T01:23:23.963187433,,,,"Success",
-bd2a7a99-2e2d-4006-b56a-b51dd82bbda6,"System","Start Game",2025-11-27T01:23:24.009700909,,,,,
-GAME6875,"System","Game Quit by Amelia",2025-11-27T01:26:51.582997157,,,,,
+GAME8712,"System","Start Game",2025-11-27T02:40:58.798573011,,,,,
+GAME8712,"System","Enter Player Name",2025-11-27T02:41:03.902202112,,,"Jason","Success",
+GAME8712,"System","Enter Player Name",2025-11-27T02:41:05.669316376,,,"Amelia","Success",
+GAME8712,"System","Select Player Count",2025-11-27T02:41:05.66937728,,,"2","Success",
+GAME8712,"System","Load File",2025-11-27T02:41:05.670838389,,,,"Success",
+4f891ebe-26fc-49c1-acaa-59b2b95f52a0,"System","Start Game",2025-11-27T02:41:05.71444917,,,,,
+GAME8712,"P1","Select Category",2025-11-27T02:41:09.401980137,"Arrays",,,,
+GAME8712,"P1","Select Question",2025-11-27T02:41:14.719511062,"Arrays",200,,,
+4f891ebe-26fc-49c1-acaa-59b2b95f52a0,"P1","Select Question",2025-11-27T02:41:14.719582906,"Arrays",200,,,
+4f891ebe-26fc-49c1-acaa-59b2b95f52a0,"P1","Answer Question",2025-11-27T02:41:17.872739449,"Arrays",200,"b","Correct",200
+GAME8712,"P1","Score Updated",2025-11-27T02:41:17.872800644,,,,,200
+GAME8712,"P2","Select Category",2025-11-27T02:41:31.488638418,"Functions",,,,
+GAME8712,"P2","Select Question",2025-11-27T02:41:35.215375427,"Functions",500,,,
+4f891ebe-26fc-49c1-acaa-59b2b95f52a0,"P2","Select Question",2025-11-27T02:41:35.215712847,"Functions",500,,,
+4f891ebe-26fc-49c1-acaa-59b2b95f52a0,"P2","Answer Question",2025-11-27T02:41:39.271008193,"Functions",500,"b","Correct",500
+GAME8712,"P2","Score Updated",2025-11-27T02:41:39.271058246,,,,,500
+GAME8712,"System","Game Quit by Jason",2025-11-27T02:41:48.053221077,,,,,

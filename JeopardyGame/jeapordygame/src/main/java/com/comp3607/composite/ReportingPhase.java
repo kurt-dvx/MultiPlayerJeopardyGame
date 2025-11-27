@@ -21,7 +21,7 @@ public class ReportingPhase implements GamePhase {
         try {
             System.out.println("\nGenerating reports...");
             
-            // USE CONFIG FOR REPORT GENERATION
+            // Uses config to get default report generator
             ReportGenerator reporter = GameConfig.getDefaultReportGenerator();
             reporter.generateReport(gameService.getSession(), GameConfig.TEXT_REPORT_FILE);
             logService.generateEventLog(GameConfig.EVENT_LOG_FILE);
