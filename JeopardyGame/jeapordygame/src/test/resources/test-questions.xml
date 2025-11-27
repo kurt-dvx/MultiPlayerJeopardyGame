@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<questions>
+  <question>
+    <category>History</category>
+    <value>100</value>
+    <text>Who invented telephone?</text>
+    <answer>Alexander Graham Bell</answer>
+  </question>
+  <question>
+    <category>History</category>
+    <value>200</value>
+    <text>Ancient Egyptian writing system?</text>
+    <answer>Hieroglyphics</answer>
+  </question>
+</questions>

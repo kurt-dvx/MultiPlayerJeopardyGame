@@ -1,0 +1,16 @@
+{
+  "questions": [
+    {
+      "category": "Science",
+      "value": 100,
+      "question": "What is H2O?",
+      "answer": "Water"
+    },
+    {
+      "category": "History", 
+      "value": 200,
+      "question": "First US president?",
+      "answer": "Washington"
+    }
+  ]
+}

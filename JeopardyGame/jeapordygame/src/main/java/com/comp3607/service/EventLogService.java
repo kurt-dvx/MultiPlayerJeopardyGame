@@ -22,6 +22,10 @@ public class EventLogService implements GameObserver {
     public void logEvent(GameEvent event) {
         events.add(event);
     }
+
+    public int getEventCount() {
+        return events.size();
+    }
     
     @Override
     public void update(GameEvent event) {
