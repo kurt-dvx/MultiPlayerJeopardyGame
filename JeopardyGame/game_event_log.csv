@@ -1,8 +1,23 @@
 Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
-GAME3726,"System","Start Game",2025-11-27T22:33:33.80582253,,,,,
-GAME3726,"System","Enter Player Name",2025-11-27T22:33:38.265436332,,,"Jason","Success",
-GAME3726,"System","Enter Player Name",2025-11-27T22:33:40.641432328,,,"Amelia","Success",
-GAME3726,"System","Select Player Count",2025-11-27T22:33:40.641488914,,,"2","Success",
-GAME3726,"System","Load File",2025-11-27T22:33:40.642483528,,,,"Success",
-dc2a723a-c699-45b1-9b3c-d5307be0783d,"System","Start Game",2025-11-27T22:33:40.686232378,,,,,
-GAME3726,"System","Game Quit by Jason",2025-11-27T22:33:43.585592469,,,,,
+GAME001,"System","Start Game",2025-11-28T00:53:54.102911614,,,,,
+GAME001,"System","Enter Player Name",2025-11-28T00:53:58.365240086,,,"Amelia","Success",
+GAME001,"System","Enter Player Name",2025-11-28T00:54:00.469256093,,,"Joshua","Success",
+GAME001,"System","Select Player Count",2025-11-28T00:54:00.469322086,,,"2","Success",
+GAME001,"System","Load File",2025-11-28T00:54:00.470233465,,,,"Success",
+002d9252-a919-4447-9152-ed04df8d9310,"System","Start Game",2025-11-28T00:54:00.517475374,,,,,
+GAME001,"P1","Select Category",2025-11-28T00:54:03.43251105,"Functions",,,,
+GAME001,"P1","Select Question",2025-11-28T00:54:05.094222659,"Functions",500,,,
+002d9252-a919-4447-9152-ed04df8d9310,"P1","Select Question",2025-11-28T00:54:05.094279024,"Functions",500,,,
+002d9252-a919-4447-9152-ed04df8d9310,"P1","Answer Question",2025-11-28T00:54:10.272008512,"Functions",500,"b","Correct",500
+GAME001,"P1","Score Updated",2025-11-28T00:54:10.272064066,,,,,500
+GAME001,"P2","Select Category",2025-11-28T00:54:14.469335662,"File Handling",,,,
+GAME001,"P2","Select Question",2025-11-28T00:54:17.328579599,"File Handling",400,,,
+002d9252-a919-4447-9152-ed04df8d9310,"P2","Select Question",2025-11-28T00:54:17.329203612,"File Handling",400,,,
+002d9252-a919-4447-9152-ed04df8d9310,"P2","Answer Question",2025-11-28T00:54:22.911743316,"File Handling",400,"c","Correct",400
+GAME001,"P2","Score Updated",2025-11-28T00:54:22.911770607,,,,,400
+GAME001,"P1","Select Category",2025-11-28T00:54:28.361196577,"Functions",,,,
+GAME001,"P1","Select Question",2025-11-28T00:54:31.846499247,"Functions",400,,,
+002d9252-a919-4447-9152-ed04df8d9310,"P1","Select Question",2025-11-28T00:54:31.846540524,"Functions",400,,,
+002d9252-a919-4447-9152-ed04df8d9310,"P1","Answer Question",2025-11-28T00:54:36.807849458,"Functions",400,"b","Correct",900
+GAME001,"P1","Score Updated",2025-11-28T00:54:36.807877831,,,,,900
+GAME001,"System","Game Quit by Joshua",2025-11-28T00:54:40.005241284,,,,,

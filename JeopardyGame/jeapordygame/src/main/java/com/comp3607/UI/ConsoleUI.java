@@ -87,7 +87,7 @@ public class ConsoleUI implements GameUI {
         try {
             String userInput = input.readLine("Choose a category (1-" + categories.size() + ") or type 'QUIT' to end game: ");
             
-            // SIMPLE QUIT CHECK - only "QUIT" works here
+            // Quit Check
             if ("QUIT".equalsIgnoreCase(userInput)) {
                 return "QUIT";
             }
@@ -139,18 +139,18 @@ public class ConsoleUI implements GameUI {
         output.display(question.getQuestionText());
         
         // REMOVED quit instruction - no quitting during answers
-        String answer = input.readLine("-> Your answer: ");
+        String answer = input.readLine("=> Your answer: ");
         return answer;
     }
     
     @Override
     public void displayAnswerResult(boolean isCorrect, int value, Question question, Player player) {
         if (isCorrect) {
-            output.displayFormatted("✅ CORRECT! +$" + value);
+            output.displayFormatted("☑️ CORRECT! +$" + value);
         } else {
             int pointsLost = Math.min(value, player.getScore() + value);
-            output.displayError("❌ WRONG! -$" + pointsLost);
-            output.display("💡 Correct answer was: " + question.getAnswer());
+            output.displayError("WRONG! -$" + pointsLost);
+            output.display("Correct answer was: " + question.getAnswer());
         }
         output.display("New Score: $" + player.getScore());
     }
@@ -158,7 +158,7 @@ public class ConsoleUI implements GameUI {
     @Override
     public void showFinalResults(GameService gameService) {
         output.displayBanner("GAME OVER!");
-        output.display("-> FINAL SCORES:");
+        output.display("=> FINAL SCORES:");
         
         List<Player> players = gameService.getPlayers();
         Player winner = players.get(0);
@@ -188,7 +188,7 @@ public class ConsoleUI implements GameUI {
             }
         }
         
-        output.displayFormatted("CURRENT LEADER: " + leader.getName() + " with $" + leader.getScore() + "!");
-        output.display("Thanks for playing!");
+        output.displayFormatted("🏆 CURRENT LEADER: " + leader.getName() + " with $" + leader.getScore() + "!");
+        output.display("🙏 Thanks for playing!");
     }
 }

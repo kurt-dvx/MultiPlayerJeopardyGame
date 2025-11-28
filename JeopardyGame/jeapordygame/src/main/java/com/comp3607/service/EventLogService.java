@@ -13,10 +13,11 @@ public class EventLogService implements GameObserver {
     private List<GameEvent> events;
     private static final String CSV_HEADER = "Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play";
     private String currentCaseId;
+    private static int gameCounter = 1;
     
     public EventLogService() {
         this.events = new ArrayList<>();
-        this.currentCaseId = "GAME" + System.currentTimeMillis() % 10000; // Unique case ID
+        this.currentCaseId = "GAME" + String.format("%03d", gameCounter++);
     }
 
     public void logEvent(GameEvent event) {
@@ -81,7 +82,7 @@ public class EventLogService implements GameObserver {
             for (GameEvent event : events) {
                 writer.write(formatEventForCSV(event) + "\n");
             }
-            System.out.println("✅ Event log saved to: " + filename);
+            System.out.println("=> Event log saved to: " + filename);
         } catch (IOException e) {
             System.err.println("❌ Error saving event log: " + e.getMessage());
         }

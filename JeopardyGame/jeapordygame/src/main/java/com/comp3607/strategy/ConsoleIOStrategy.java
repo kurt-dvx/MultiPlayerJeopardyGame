@@ -53,7 +53,7 @@ public class ConsoleIOStrategy implements InputStrategy, OutputStrategy {
     
     @Override
     public void displayFormatted(String message) {
-        System.out.println("🎮 " + message);
+        System.out.println(message);
     }
     
     @Override

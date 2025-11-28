@@ -20,9 +20,23 @@
         <junit.version>5.10.0</junit.version>
         <mockito.version>5.6.0</mockito.version>
         <jackson.version>2.16.1</jackson.version>
+        <jacoco.version>0.8.10</jacoco.version>
         <pdfbox.version>2.0.29</pdfbox.version>
         <poi.version>5.2.4</poi.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Jackson BOM to keep Jackson modules aligned -->
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <!-- JUnit 5 for testing -->
@@ -53,14 +67,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
         </dependency>
 
         <!-- Jackson for XML parsing -->
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-xml</artifactId>
-            <version>${jackson.version}</version>
         </dependency>
 
         <!-- PDFBox for PDF report generation -->
@@ -132,7 +144,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.10</version>
+                <version>${jacoco.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -216,12 +228,6 @@
                 <version>3.1.2</version>
             </plugin>
             
-            <!-- JaCoCo report plugin -->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.10</version>
-            </plugin>
         </plugins>
     </reporting>
 </project>

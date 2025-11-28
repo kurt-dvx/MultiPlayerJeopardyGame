@@ -3,17 +3,19 @@ JEOPARDY GAME REPORT
 
 FINAL SCORES:
 -------------
-Jason: $0
-Amelia: $0
+Amelia: $900
+Joshua: $400
 
 GAME STATISTICS:
 ----------------
-Questions Answered: 0/25
+Questions Answered: 3/25
 
-WINNER: Jason with $0
+WINNER: Amelia with $900
 
 TURN HISTORY:
 -------------
-Turn by turn history not available.
+Turn 1: Amelia: Functions - $500 - Answer: 'b' - Correct - Score: $500
+Turn 2: Joshua: File Handling - $400 - Answer: 'c' - Correct - Score: $400
+Turn 3: Amelia: Functions - $400 - Answer: 'b' - Correct - Score: $900
 
-Report generated on: 2025-11-27T22:33:43.605407024
+Report generated on: 2025-11-28T00:54:40.015526309
