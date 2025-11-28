@@ -1,4 +1,0 @@
-Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
-GAME004,System,Test Event,2025-11-28T17:42:01.799385882,,,,,
-GAME004,P1,Enter Player Name,2025-11-28T17:42:01.799398942,,,,TestPlayer,N/A
-GAME004,P1,Answer Question,2025-11-28T17:42:01.79941084,Science,100,Water,Correct,100
