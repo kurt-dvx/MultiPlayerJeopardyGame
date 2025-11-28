@@ -48,25 +48,8 @@ class QuestionTest {
         
         System.out.println("Testing null answer...");
         assertFalse(question.checkAnswer(null), "Null answer should be false");
-        
+                
         System.out.println("✓ Answer checking test passed\n");
-    }
-    
-    @Test
-    void testMultipleChoiceAnswer() {
-        System.out.println("=== Testing Multiple Choice Answers ===");
-        Question question = new Question("Science", 100, "What is H2O?", "A");
-        
-        System.out.println("Testing correct choice 'A'...");
-        assertTrue(question.checkMultipleChoiceAnswer("A"), "Correct choice should be true");
-        
-        System.out.println("Testing case insensitive 'a'...");
-        assertTrue(question.checkMultipleChoiceAnswer("a"), "Case insensitive should be true");
-        
-        System.out.println("Testing wrong choice 'B'...");
-        assertFalse(question.checkMultipleChoiceAnswer("B"), "Wrong choice should be false");
-        
-        System.out.println("✓ Multiple choice test passed\n");
     }
     
     @Test

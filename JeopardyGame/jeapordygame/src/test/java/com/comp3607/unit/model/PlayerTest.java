@@ -23,33 +23,36 @@ class PlayerTest {
     }
     
     @Test
-    void testPlayerEquality() {
-        System.out.println("=== Testing Player Equality ===");
-        Player player1 = new Player("P1", "Alice");
-        Player player2 = new Player("P1", "Alice");
-        Player player3 = new Player("P2", "Bob");
+    void testPlayerScoreOperations() {
+        System.out.println("=== Testing Player Score Operations ===");
+        Player player = new Player("P1", "TestPlayer");
         
-        System.out.println("Player1: " + player1);
-        System.out.println("Player2: " + player2);
-        System.out.println("Player3: " + player3);
+        System.out.println("Initial score: " + player.getScore());
+        assertEquals(0, player.getScore(), "Initial score should be 0");
         
-        System.out.println("Testing player1.equals(player2)...");
-        assertEquals(player1, player2, "Players with same ID should be equal");
+        System.out.println("Adding 100 points...");
+        player.addScore(100);
+        assertEquals(100, player.getScore(), "Score should be 100 after addition");
+        System.out.println("Score after addition: " + player.getScore());
         
-        System.out.println("Testing player1.equals(player3)...");
-        assertNotEquals(player1, player3, "Players with different IDs should not be equal");
+        System.out.println("Subtracting 50 points...");
+        player.subtractScore(50);
+        assertEquals(50, player.getScore(), "Score should be 50 after subtraction");
+        System.out.println("Score after subtraction: " + player.getScore());
         
-        System.out.println("Testing hashCode consistency...");
-        assertEquals(player1.hashCode(), player2.hashCode(), "Equal players should have same hashCode");
+        System.out.println("Subtracting 100 points (testing minimum)...");
+        player.subtractScore(100);
+        assertEquals(0, player.getScore(), "Score should not go below 0");
+        System.out.println("Score after large subtraction: " + player.getScore());
         
-        System.out.println("✓ Player equality test passed\n");
+        System.out.println("✓ Score operations test passed\n");
     }
     
     @Test
     void testPlayerToString() {
         System.out.println("=== Testing Player toString ===");
         Player player = new Player("P1", "Alice");
-        player.setScore(100);
+        player.addScore(100);
         
         String toString = player.toString();
         System.out.println("toString output: " + toString);

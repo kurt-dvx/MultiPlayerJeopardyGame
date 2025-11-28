@@ -1,21 +1,17 @@
 JEOPARDY GAME REPORT
-===================
+================================
 
-FINAL SCORES:
--------------
-Alice: $300
-Bob: $200
+Players: Alice, Bob
 
-GAME STATISTICS:
-----------------
-Questions Answered: 2/2
+Gameplay Summary:
+-----------------
+Turn 1: Alice selected Science for 100 pts
+Turn 2: Question: What is H2O?
+Answer: Water — Correct (+100 pts)
+Score after turn: Alice = 100
 
-WINNER: Alice with $300
+Final Scores:
+Alice: 300
+Bob: 200
 
-TURN HISTORY:
--------------
-Turn 1: Alice answered Science 100 correctly (+100)
-Turn 2: Bob answered History 200 correctly (+200)
-Turn 3: Alice answered Science 300 correctly (+300)
-
-Report generated on: 2025-11-28T00:10:41.412222007
+Report generated on: 2025-11-28T03:04:15.624115645

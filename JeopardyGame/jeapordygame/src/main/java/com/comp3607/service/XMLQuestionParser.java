@@ -17,10 +17,13 @@ public class XMLQuestionParser extends AbstractQuestionParser {
                 xmlContent.append(line);
             }
             
-            // Simple XML parsing
-            questions = parseSimpleXML(xmlContent.toString());
+            // Actually parse the XML content
+            questions = parseXMLContent(xmlContent.toString());
             
+        } catch (Exception e) {
+            System.err.println("Error parsing XML: " + e.getMessage());
         }
+        
         return questions;
     }
     
@@ -29,14 +32,46 @@ public class XMLQuestionParser extends AbstractQuestionParser {
         return "XML";
     }
     
-    private List<Question> parseSimpleXML(String xml) {
+    private List<Question> parseXMLContent(String xml) {
         List<Question> questions = new ArrayList<>();
-        // Simple parsing for basic XML structure
-        if (xml.contains("<question>") && xml.contains("<category>")) {
-            // sample questions
-            questions.add(new Question("History", 100, "Who invented telephone?", "Alexander Graham Bell"));
-            questions.add(new Question("History", 200, "Ancient Egyptian writing system?", "Hieroglyphics"));
+        
+        // Simple XML parsing without external libraries
+        String[] questionBlocks = xml.split("<question>");
+        
+        for (String block : questionBlocks) {
+            if (block.contains("</question>")) {
+                String questionContent = block.substring(0, block.indexOf("</question>"));
+                
+                String category = extractTagContent(questionContent, "category");
+                String valueStr = extractTagContent(questionContent, "value");
+                String text = extractTagContent(questionContent, "text");
+                String answer = extractTagContent(questionContent, "answer");
+                
+                if (category != null && valueStr != null && text != null && answer != null) {
+                    try {
+                        int value = Integer.parseInt(valueStr.trim());
+                        questions.add(new Question(category.trim(), value, text.trim(), answer.trim()));
+                    } catch (NumberFormatException e) {
+                        System.err.println("Invalid value in XML: " + valueStr);
+                    }
+                }
+            }
         }
+        
         return questions;
+    }
+    
+    private String extractTagContent(String xmlBlock, String tagName) {
+        String startTag = "<" + tagName + ">";
+        String endTag = "</" + tagName + ">";
+        
+        int startIndex = xmlBlock.indexOf(startTag);
+        if (startIndex == -1) return null;
+        
+        startIndex += startTag.length();
+        int endIndex = xmlBlock.indexOf(endTag, startIndex);
+        if (endIndex == -1) return null;
+        
+        return xmlBlock.substring(startIndex, endIndex);
     }
 }

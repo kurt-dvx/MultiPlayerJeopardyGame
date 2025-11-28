@@ -1,0 +1,4 @@
+Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
+GAME008,System,Test Event,2025-11-28T03:48:17.166847295,,,,,
+GAME008,P1,Enter Player Name,2025-11-28T03:48:17.166859918,,,,TestPlayer,N/A
+GAME008,P1,Answer Question,2025-11-28T03:48:17.166873163,Science,100,Water,Correct,100

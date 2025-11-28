@@ -1,43 +1,31 @@
-JEOPARDY PROGRAMMING GAME REPORT
+JEOPARDY GAME REPORT
 ================================
 
-Players: Amelia, Jaxon
+Players: Jason, Amelia
 
 Gameplay Summary:
 -----------------
-Turn 1: Player joined: Amelia
-Turn 2: Player joined: Jaxon
-Turn 3: Amelia selected File Handling for 500 pts
-Turn 4: Question: What happens if a file fails to open?
-Answer: c — Correct (+500 pts)
-Score after turn: Amelia = 500
-Turn 5: Jaxon selected Functions for 500 pts
+Turn 1: Player joined: Jason
+Turn 2: Player joined: Amelia
+Turn 3: Jason selected Control Structures for 100 pts
+Turn 4: Question: Which statement is used to make a decision?
+Answer: a — Correct (+100 pts)
+Score after turn: Jason = 100
+Turn 5: Amelia selected Functions for 500 pts
 Turn 6: Question: If a function is not declared before use, what may happen?
 Answer: b — Correct (+500 pts)
-Score after turn: Jaxon = 500
-Turn 7: Amelia selected Control Structures for 500 pts
-Turn 8: Question: How many times will the loop for(int i=0;i<3;i++) run?
+Score after turn: Amelia = 500
+Turn 7: Jason selected Functions for 200 pts
+Turn 8: Question: What is the purpose of a function parameter?
+Answer: b — Correct (+200 pts)
+Score after turn: Jason = 300
+Turn 9: Amelia selected Control Structures for 500 pts
+Turn 10: Question: How many times will the loop for(int i=0;i<3;i++) run?
 Answer: b — Correct (+500 pts)
 Score after turn: Amelia = 1000
-Turn 9: Jaxon selected Functions for 400 pts
-Turn 10: Question: Which statement exits a function and sends a value back?
-Answer: b — Correct (+400 pts)
-Score after turn: Jaxon = 900
-Turn 11: Amelia selected Variables & Data Types for 500 pts
-Turn 12: Question: Which operator is used to get the remainder?
-Answer: b — Correct (+500 pts)
-Score after turn: Amelia = 1500
-Turn 13: Jaxon selected Functions for 100 pts
-Turn 14: Question: Which keyword is used to define a function returning no value?
-Answer: c — Wrong (+-100 pts)
-Score after turn: Jaxon = 800
-Turn 15: Amelia selected File Handling for 400 pts
-Turn 16: Question: Which function closes a file?
-Answer: c — Correct (+400 pts)
-Score after turn: Amelia = 1900
 
 Final Scores:
-Amelia: 1900
-Jaxon: 800
+Jason: 300
+Amelia: 1000
 
-Report generated on: 2025-11-28T02:28:56.024445144
+Report generated on: 2025-11-28T03:47:59.660955443

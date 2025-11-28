@@ -1,35 +1,23 @@
 Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
-GAME001,P1,Enter Player Name,2025-11-28T02:27:33.621617448,,,,Amelia,N/A
-GAME001,P2,Enter Player Name,2025-11-28T02:27:37.038808079,,,,Jaxon,N/A
-GAME001,System,Select Player Count,2025-11-28T02:27:37.038855187,,,,2,N/A
-GAME001,System,Load File,2025-11-28T02:27:37.053665371,,,,Success,
-GAME001,System,Start Game,2025-11-28T02:27:37.054551713,,,,,
-GAME001,P1,Select Category,2025-11-28T02:27:38.880759776,File Handling,,,,0
-GAME001,P1,Select Question,2025-11-28T02:27:40.753392991,File Handling,500,,,0
-GAME001,P1,Select Question,2025-11-28T02:27:40.753465517,File Handling,500,,,0
-GAME001,P1,Answer Question,2025-11-28T02:27:45.544375083,File Handling,500,c,Correct,500
-GAME001,P2,Select Category,2025-11-28T02:27:47.775898825,Functions,,,,0
-GAME001,P2,Select Question,2025-11-28T02:27:51.568739646,Functions,500,,,0
-GAME001,P2,Select Question,2025-11-28T02:27:51.569186846,Functions,500,,,0
-GAME001,P2,Answer Question,2025-11-28T02:27:56.040330003,Functions,500,b,Correct,500
-GAME001,P1,Select Category,2025-11-28T02:28:00.207764164,Control Structures,,,,0
-GAME001,P1,Select Question,2025-11-28T02:28:02.080649323,Control Structures,500,,,0
-GAME001,P1,Select Question,2025-11-28T02:28:02.080707762,Control Structures,500,,,0
-GAME001,P1,Answer Question,2025-11-28T02:28:05.728242161,Control Structures,500,b,Correct,1000
-GAME001,P2,Select Category,2025-11-28T02:28:09.463585997,Functions,,,,0
-GAME001,P2,Select Question,2025-11-28T02:28:14.089525753,Functions,400,,,0
-GAME001,P2,Select Question,2025-11-28T02:28:14.08957738,Functions,400,,,0
-GAME001,P2,Answer Question,2025-11-28T02:28:17.30677058,Functions,400,b,Correct,900
-GAME001,P1,Select Category,2025-11-28T02:28:21.767968322,Variables & Data Types,,,,0
-GAME001,P1,Select Question,2025-11-28T02:28:23.623994962,Variables & Data Types,500,,,0
-GAME001,P1,Select Question,2025-11-28T02:28:23.624044364,Variables & Data Types,500,,,0
-GAME001,P1,Answer Question,2025-11-28T02:28:26.217062298,Variables & Data Types,500,b,Correct,1500
-GAME001,P2,Select Category,2025-11-28T02:28:29.512916155,Functions,,,,0
-GAME001,P2,Select Question,2025-11-28T02:28:32.656727005,Functions,100,,,0
-GAME001,P2,Select Question,2025-11-28T02:28:32.656778421,Functions,100,,,0
-GAME001,P2,Answer Question,2025-11-28T02:28:36.6774347,Functions,100,c,Incorrect,800
-GAME001,P1,Select Category,2025-11-28T02:28:44.278681576,File Handling,,,,0
-GAME001,P1,Select Question,2025-11-28T02:28:46.304058318,File Handling,400,,,0
-GAME001,P1,Select Question,2025-11-28T02:28:46.304114162,File Handling,400,,,0
-GAME001,P1,Answer Question,2025-11-28T02:28:49.266007434,File Handling,400,c,Correct,1900
-GAME001,System,Game Quit by Jaxon,2025-11-28T02:28:56.019637493,,,,,
+GAME001,P1,Enter Player Name,2025-11-28T03:47:16.763931721,,,,Jason,N/A
+GAME001,P2,Enter Player Name,2025-11-28T03:47:18.848721255,,,,Amelia,N/A
+GAME001,System,Select Player Count,2025-11-28T03:47:18.84877758,,,,2,N/A
+GAME001,System,Load File,2025-11-28T03:47:18.862670548,,,,Success,
+GAME001,System,Start Game,2025-11-28T03:47:18.863510774,,,,,
+GAME001,P1,Select Category,2025-11-28T03:47:21.864246061,Control Structures,,,,0
+GAME001,P1,Select Question,2025-11-28T03:47:22.456417623,Control Structures,100,,,0
+GAME001,P1,Select Question,2025-11-28T03:47:22.456477304,Control Structures,100,,,0
+GAME001,P1,Answer Question,2025-11-28T03:47:25.235664539,Control Structures,100,a,Correct,100
+GAME001,P2,Select Category,2025-11-28T03:47:32.204490836,Functions,,,,0
+GAME001,P2,Select Question,2025-11-28T03:47:32.973156597,Functions,500,,,0
+GAME001,P2,Select Question,2025-11-28T03:47:32.973213152,Functions,500,,,0
+GAME001,P2,Answer Question,2025-11-28T03:47:35.971811214,Functions,500,b,Correct,500
+GAME001,P1,Select Category,2025-11-28T03:47:42.518091524,Functions,,,,0
+GAME001,P1,Select Question,2025-11-28T03:47:44.078151663,Functions,200,,,0
+GAME001,P1,Select Question,2025-11-28T03:47:44.07821389,Functions,200,,,0
+GAME001,P1,Answer Question,2025-11-28T03:47:48.197592091,Functions,200,b,Correct,300
+GAME001,P2,Select Category,2025-11-28T03:47:51.842826702,Control Structures,,,,0
+GAME001,P2,Select Question,2025-11-28T03:47:54.413970629,Control Structures,500,,,0
+GAME001,P2,Select Question,2025-11-28T03:47:54.414021734,Control Structures,500,,,0
+GAME001,P2,Answer Question,2025-11-28T03:47:56.91826368,Control Structures,500,b,Correct,1000
+GAME001,System,Game Quit by Jason,2025-11-28T03:47:59.654219687,,,,,
