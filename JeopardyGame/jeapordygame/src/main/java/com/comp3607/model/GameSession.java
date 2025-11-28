@@ -24,24 +24,20 @@ public class GameSession {
     }
     
     public List<Player> getPlayers() { 
-        return players; 
+        return new ArrayList<>(players); 
     }
     
     public List<Question> getQuestions() { 
-        return questions; 
+        return new ArrayList<>(questions); 
     }
     
-    // Turn history methods
+    // Turn history methods for report generation
     public void addTurnHistory(String turnInfo) {
         turnHistory.add(turnInfo);
     }
     
     public List<String> getTurnHistory() {
         return new ArrayList<>(turnHistory);
-    }
-    
-    public void clearTurnHistory() {
-        turnHistory.clear();
     }
     
     public int getTurnCount() {

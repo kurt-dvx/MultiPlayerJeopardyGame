@@ -2,26 +2,27 @@ package com.comp3607.service;
 
 import com.comp3607.model.*;
 import com.comp3607.observer.GameNotifier;
-import com.comp3607.factory.GameEventFactory;
 import java.util.*;
 
 public class GameService {
     private GameSession session;
     private GameNotifier notifier;
-    private String caseId;
+    private EventLogService logService;
     private Question currentQuestion;
     
-    public GameService(GameNotifier notifier) {
+    public GameService(GameNotifier notifier, EventLogService logService) {
         this.notifier = notifier;
-        this.caseId = UUID.randomUUID().toString();
+        this.logService = logService;
     }
     
     public void startGame(List<Player> players, List<Question> questions) {
         this.session = new GameSession(players, questions);
+        logService.logSystemEvent("Start Game");
         
-        // Using factory method
-        GameEvent event = GameEventFactory.createSystemEvent(caseId, "Start Game");
-        notifier.notifyObservers(event);
+        // turn history for report
+        for (Player player : players) {
+            session.addTurnHistory("Player joined: " + player.getName());
+        }
     }
     
     public List<String> getCategories() {
@@ -51,9 +52,11 @@ public class GameService {
                 currentQuestion = q;
                 
                 Player currentPlayer = session.getCurrentPlayer();
-                GameEvent event = GameEventFactory.createQuestionSelectionEvent(
-                    caseId, currentPlayer.getId(), category, value);
-                notifier.notifyObservers(event);
+                logService.logQuestionSelection(currentPlayer.getId(), category, value);
+                
+                // turn history for report
+                String turnInfo = currentPlayer.getName() + " selected " + category + " for " + value + " pts";
+                session.addTurnHistory(turnInfo);
                 
                 return q;
             }
@@ -62,7 +65,7 @@ public class GameService {
     }
     
     private boolean evaluateAnswer(String answer) {
-        return currentQuestion != null && currentQuestion.checkMultipleChoiceAnswer(answer);
+        return currentQuestion != null && currentQuestion.checkAnswer(answer);
     }
     
     public boolean submitAnswer(String answer) {
@@ -74,30 +77,26 @@ public class GameService {
         if (isCorrect) {
             currentPlayer.addScore(currentQuestion.getValue());
         } else {
-            currentPlayer.addScore(-currentQuestion.getValue());
+            currentPlayer.subtractScore(currentQuestion.getValue());
         }
         
-        String turnInfo = String.format("%s: %s - $%d - Answer: '%s' - %s - Score: $%d",
-            currentPlayer.getName(),
-            currentQuestion.getCategory(),
-            currentQuestion.getValue(),
+        logService.logAnswer(currentPlayer.getId(), currentQuestion.getCategory(),
+                           currentQuestion.getValue(), answer, isCorrect, currentPlayer.getScore());
+        
+        // turn history for report
+        String turnInfo = String.format("Question: %s\nAnswer: %s — %s (+%d pts)\nScore after turn: %s = %d",
+            currentQuestion.getQuestionText().split("\n")[0], // First line only
             answer,
             isCorrect ? "Correct" : "Wrong",
+            isCorrect ? currentQuestion.getValue() : -currentQuestion.getValue(),
+            currentPlayer.getName(),
             currentPlayer.getScore()
         );
         session.addTurnHistory(turnInfo);
         
-        // Using factory design pattern
-        GameEvent event = GameEventFactory.createQuestionAnsweredEvent(
-            caseId, currentPlayer.getId(), currentQuestion.getCategory(),
-            currentQuestion.getValue(), answer, isCorrect, currentPlayer.getScore()
-        );
-        notifier.notifyObservers(event);
-        
         return isCorrect;
     }
 
-    
     public void nextTurn() {
         session.nextTurn();
     }
