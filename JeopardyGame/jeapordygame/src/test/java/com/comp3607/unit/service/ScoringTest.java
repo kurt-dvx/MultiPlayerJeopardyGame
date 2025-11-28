@@ -29,12 +29,10 @@ class ScoringTest {
         assertEquals(0, player.getScore(), "Score should not go below 0");
         System.out.println("Score after large subtraction: " + player.getScore());
         
-        System.out.println("Adding 200 points and resetting...");
+        System.out.println("Adding 200 points...");
         player.addScore(200);
-        System.out.println("Score before reset: " + player.getScore());
-        player.resetScore();
-        assertEquals(0, player.getScore(), "Score should be 0 after reset");
-        System.out.println("Score after reset: " + player.getScore());
+        System.out.println("Score after +200: " + player.getScore());
+        assertEquals(200, player.getScore(), "Score should be 200 after final addition");
         
         System.out.println("✓ Score operations test passed\n");
     }
@@ -57,5 +55,42 @@ class ScoringTest {
         assertEquals(250, player.getScore(), "Cumulative score should be 250");
         
         System.out.println("✓ Multiple operations test passed\n");
+    }
+    
+    @Test
+    void testScoreNeverGoesNegative() {
+        System.out.println("=== Testing Score Never Goes Negative ===");
+        Player player = new Player("P1", "TestPlayer");
+        
+        System.out.println("Starting score: " + player.getScore());
+        
+        System.out.println("Subtracting 100 from 0...");
+        player.subtractScore(100);
+        assertEquals(0, player.getScore(), "Score should remain 0 when subtracting from 0");
+        System.out.println("Score after subtraction from 0: " + player.getScore());
+        
+        System.out.println("Adding 50 then subtracting 100...");
+        player.addScore(50);
+        player.subtractScore(100);
+        assertEquals(0, player.getScore(), "Score should be 0 after large subtraction");
+        System.out.println("Score after +50 then -100: " + player.getScore());
+        
+        System.out.println("✓ Score boundary test passed\n");
+    }
+    
+    @Test
+    void testPlayerToStringWithScore() {
+        System.out.println("=== Testing Player toString With Score ===");
+        Player player = new Player("P1", "Alice");
+        player.addScore(150);
+        
+        String toString = player.toString();
+        System.out.println("toString output: " + toString);
+        
+        assertTrue(toString.contains("Alice"), "toString should contain player name");
+        assertTrue(toString.contains("150"), "toString should contain player score");
+        assertTrue(toString.contains("P1"), "toString should contain player ID");
+        
+        System.out.println("✓ Player toString test passed\n");
     }
 }

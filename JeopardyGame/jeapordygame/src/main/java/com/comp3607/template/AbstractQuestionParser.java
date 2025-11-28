@@ -1,0 +1,42 @@
+package com.comp3607.template;
+
+import com.comp3607.model.Question;
+
+import java.io.*;
+import java.util.List;
+import java.util.ArrayList;
+
+public abstract class AbstractQuestionParser implements QuestionParser {
+    
+    // Template method pattern - defines the skeleton
+    @Override
+    public final List<Question> parse(String filePath) {
+        List<Question> questions = new ArrayList<>();
+        
+        try (InputStream inputStream = getInputStream(filePath)) {
+            if (inputStream != null) {
+                questions = parseFromStream(inputStream);
+                System.out.println("✓ Loaded " + questions.size() + " questions from: " + filePath);
+            } else {
+                System.err.println("❌ File not found: " + filePath);
+            }
+        } catch (Exception e) {
+            System.err.println("❌ Error parsing " + getSupportedFormat() + " file: " + e.getMessage());
+        }
+        
+        return questions;
+    }
+    
+    // Primitive operations - to be implemented by subclasses
+    protected abstract List<Question> parseFromStream(InputStream inputStream) throws IOException;
+    protected abstract String getSupportedFormat();
+    
+    // Common implementation - reusable by all subclasses
+    protected InputStream getInputStream(String filePath) throws FileNotFoundException {
+        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath);
+        if (inputStream == null) {
+            inputStream = new FileInputStream(filePath);
+        }
+        return inputStream;
+    }
+}

@@ -4,6 +4,7 @@ import com.comp3607.model.Player;
 import com.comp3607.model.Question;
 import com.comp3607.observer.GameNotifier;
 import com.comp3607.service.GameService;
+import com.comp3607.service.EventLogService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.Arrays;
@@ -18,7 +19,8 @@ class GameServiceTest {
     @BeforeEach
     void setUp() {
         GameNotifier notifier = new GameNotifier();
-        gameService = new GameService(notifier);
+        EventLogService logService = new EventLogService();
+        gameService = new GameService(notifier, logService); 
         
         players = Arrays.asList(
             new Player("P1", "Alice"),
@@ -58,7 +60,7 @@ class GameServiceTest {
         boolean isCorrect = gameService.submitAnswer("Water");
         
         assertTrue(isCorrect);
-        assertEquals(100, gameService.getCurrentPlayer().getScore());
+        assertEquals(100, players.get(0).getScore()); 
         System.out.println("Correct answer test passed");
     }
     
@@ -68,7 +70,7 @@ class GameServiceTest {
         boolean isCorrect = gameService.submitAnswer("WrongAnswer");
         
         assertFalse(isCorrect);
-        assertEquals(0, gameService.getCurrentPlayer().getScore());
+        assertEquals(0, players.get(0).getScore());
         System.out.println("Wrong answer test passed");
     }
     

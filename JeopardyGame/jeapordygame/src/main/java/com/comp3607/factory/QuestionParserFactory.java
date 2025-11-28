@@ -1,9 +1,9 @@
 package com.comp3607.factory;
 
-import com.comp3607.service.QuestionParser;
-import com.comp3607.service.CSVQuestionParser;
-import com.comp3607.service.JSONQuestionParser;
-import com.comp3607.service.XMLQuestionParser;
+import com.comp3607.parser.CSVQuestionParser;
+import com.comp3607.parser.JSONQuestionParser;
+import com.comp3607.parser.XMLQuestionParser;
+import com.comp3607.template.QuestionParser;
 
 public class QuestionParserFactory {
     public static QuestionParser createParser(String filePath) {

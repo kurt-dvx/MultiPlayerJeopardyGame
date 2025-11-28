@@ -1,7 +1,8 @@
 package com.comp3607.unit.parser;
 
-import com.comp3607.service.JSONQuestionParser;
 import com.comp3607.model.Question;
+import com.comp3607.parser.JSONQuestionParser;
+
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
@@ -45,6 +46,6 @@ class JSONQuestionParserTest {
         assertNotNull(questions);
         assertTrue(questions.isEmpty());
         
-        System.out.println("✓ Handled non-existent JSON file gracefully");
+        System.out.println("✓ Handled non-existent JSON file");
     }
 }

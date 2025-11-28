@@ -20,7 +20,7 @@ class GameIntegrationTest {
         GameNotifier notifier = new GameNotifier();
         EventLogService logService = new EventLogService();
         notifier.addObserver(logService);
-        GameService gameService = new GameService(notifier);
+        GameService gameService = new GameService(notifier, logService);
         
         List<Player> players = Arrays.asList(
             new Player("P1", "Alice"),
@@ -40,7 +40,7 @@ class GameIntegrationTest {
         assertNotNull(question1);
         boolean correct1 = gameService.submitAnswer("Water");
         assertTrue(correct1);
-        assertEquals(100, gameService.getCurrentPlayer().getScore());
+        assertEquals(100, players.get(0).getScore());
         
         gameService.nextTurn();
         
@@ -49,7 +49,7 @@ class GameIntegrationTest {
         assertNotNull(question2);
         boolean correct2 = gameService.submitAnswer("Washington");
         assertTrue(correct2);
-        assertEquals(200, gameService.getCurrentPlayer().getScore());
+        assertEquals(200, players.get(1).getScore());
         
         // Verify game completion
         assertTrue(gameService.isGameOver());
@@ -63,7 +63,8 @@ class GameIntegrationTest {
         System.out.println("Testing incorrect answers...");
         
         GameNotifier notifier = new GameNotifier();
-        GameService gameService = new GameService(notifier);
+        EventLogService logService = new EventLogService();
+        GameService gameService = new GameService(notifier, logService);
         
         List<Player> players = Arrays.asList(new Player("P1", "Test"));
         List<Question> questions = Arrays.asList(
@@ -76,7 +77,7 @@ class GameIntegrationTest {
         boolean correct = gameService.submitAnswer("Wrong");
         
         assertFalse(correct);
-        assertEquals(0, gameService.getCurrentPlayer().getScore());
+        assertEquals(0, players.get(0).getScore());
         
         System.out.println("Incorrect answer test passed");
     }
