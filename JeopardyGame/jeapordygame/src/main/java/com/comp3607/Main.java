@@ -2,9 +2,9 @@ package com.comp3607;
 
 import com.comp3607.service.GameService;
 import com.comp3607.service.EventLogService;
-import com.comp3607.service.QuestionParser;
 import com.comp3607.factory.QuestionParserFactory;
 import com.comp3607.strategy.TextReportGenerator;
+import com.comp3607.template.QuestionParser;
 import com.comp3607.UI.ConsoleUI;
 import com.comp3607.observer.GameNotifier;
 import com.comp3607.model.Player;

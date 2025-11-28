@@ -1,7 +1,8 @@
 package com.comp3607.unit.parser;
 
-import com.comp3607.service.CSVQuestionParser;
 import com.comp3607.model.Question;
+import com.comp3607.parser.CSVQuestionParser;
+
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;

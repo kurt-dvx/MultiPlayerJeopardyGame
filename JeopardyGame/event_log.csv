@@ -1,106 +1,45 @@
 Case_ID,Player_ID,Activity,Timestamp,Category,Question_Value,Answer_Given,Result,Score_After_Play
-GAME001,P1,Enter Player Name,2025-11-28T17:10:13.541408398,,,,Anita,N/A
-GAME001,P2,Enter Player Name,2025-11-28T17:10:16.206629871,,,,Amelia,N/A
-GAME001,System,Select Player Count,2025-11-28T17:10:16.206686755,,,,2,N/A
-GAME001,System,Load File,2025-11-28T17:10:16.257237565,,,,Success,
-GAME001,System,Start Game,2025-11-28T17:10:16.258712163,,,,,
-GAME001,P1,Select Category,2025-11-28T17:10:24.144659521,Control Structures,,,,0
-GAME001,P1,Select Question,2025-11-28T17:10:26.4493682,Control Structures,500,,,0
-GAME001,P1,Select Question,2025-11-28T17:10:26.44943563,Control Structures,500,,,0
-GAME001,P1,Answer Question,2025-11-28T17:10:31.937730682,Control Structures,500,b,Correct,500
-GAME001,P2,Select Category,2025-11-28T17:10:36.468220855,Control Structures,,,,0
-GAME001,P2,Select Question,2025-11-28T17:10:39.272468837,Control Structures,400,,,0
-GAME001,P2,Select Question,2025-11-28T17:10:39.27252492,Control Structures,400,,,0
-GAME001,P2,Answer Question,2025-11-28T17:10:43.658219436,Control Structures,400,d,Correct,400
-GAME001,P1,Select Category,2025-11-28T17:10:45.831630761,Functions,,,,0
-GAME001,P1,Select Question,2025-11-28T17:10:49.400487024,Functions,500,,,0
-GAME001,P1,Select Question,2025-11-28T17:10:49.400540674,Functions,500,,,0
-GAME001,P1,Answer Question,2025-11-28T17:10:54.176961704,Functions,500,b,Correct,1000
-GAME001,P2,Select Category,2025-11-28T17:10:57.808342429,Arrays,,,,0
-GAME001,P2,Select Question,2025-11-28T17:10:59.481612788,Arrays,500,,,0
-GAME001,P2,Select Question,2025-11-28T17:10:59.481668491,Arrays,500,,,0
-GAME001,P2,Answer Question,2025-11-28T17:11:02.039055316,Arrays,500,b,Correct,900
-GAME001,P1,Select Category,2025-11-28T17:11:05.774262623,Functions,,,,0
-GAME001,P1,Select Question,2025-11-28T17:11:08.399649774,Functions,100,,,0
-GAME001,P1,Select Question,2025-11-28T17:11:08.399702733,Functions,100,,,0
-GAME001,P1,Answer Question,2025-11-28T17:11:11.718567305,Functions,100,b,Correct,1100
-GAME001,P2,Select Category,2025-11-28T17:11:15.925721564,File Handling,,,,0
-GAME001,P2,Select Question,2025-11-28T17:11:17.445993838,File Handling,500,,,0
-GAME001,P2,Select Question,2025-11-28T17:11:17.44605631,File Handling,500,,,0
-GAME001,P2,Answer Question,2025-11-28T17:11:20.945066831,File Handling,500,c,Correct,1400
-GAME001,P1,Select Category,2025-11-28T17:11:24.547329461,Variables & Data Types,,,,0
-GAME001,P1,Select Question,2025-11-28T17:11:25.981716257,Variables & Data Types,500,,,0
-GAME001,P1,Select Question,2025-11-28T17:11:25.981768345,Variables & Data Types,500,,,0
-GAME001,P1,Answer Question,2025-11-28T17:11:28.902044299,Variables & Data Types,500,b,Correct,1600
-GAME001,P2,Select Category,2025-11-28T17:11:32.391291256,Arrays,,,,0
-GAME001,P2,Select Question,2025-11-28T17:11:34.317072453,Arrays,400,,,0
-GAME001,P2,Select Question,2025-11-28T17:11:34.317128406,Arrays,400,,,0
-GAME001,P2,Answer Question,2025-11-28T17:11:43.774098715,Arrays,400,b,Correct,1800
-GAME001,P1,Select Category,2025-11-28T17:11:49.318343816,Variables & Data Types,,,,0
-GAME001,P1,Select Question,2025-11-28T17:11:51.29880623,Variables & Data Types,400,,,0
-GAME001,P1,Select Question,2025-11-28T17:11:51.298854392,Variables & Data Types,400,,,0
-GAME001,P1,Answer Question,2025-11-28T17:11:55.633215657,Variables & Data Types,400,b,Correct,2000
-GAME001,P2,Select Category,2025-11-28T17:12:00.332603251,Functions,,,,0
-GAME001,P2,Select Question,2025-11-28T17:12:01.682818052,Functions,400,,,0
-GAME001,P2,Select Question,2025-11-28T17:12:01.682871691,Functions,400,,,0
-GAME001,P2,Answer Question,2025-11-28T17:12:05.114238125,Functions,400,b,Correct,2200
-GAME001,P1,Select Category,2025-11-28T17:12:09.348545805,Control Structures,,,,0
-GAME001,P1,Select Question,2025-11-28T17:12:12.141463299,Control Structures,300,,,0
-GAME001,P1,Select Question,2025-11-28T17:12:12.141514725,Control Structures,300,,,0
-GAME001,P1,Answer Question,2025-11-28T17:12:17.79722541,Control Structures,300,c,Correct,2300
-GAME001,P2,Select Category,2025-11-28T17:12:21.190034816,Variables & Data Types,,,,0
-GAME001,P2,Select Question,2025-11-28T17:12:23.221776031,Variables & Data Types,300,,,0
-GAME001,P2,Select Question,2025-11-28T17:12:23.221854186,Variables & Data Types,300,,,0
-GAME001,P2,Answer Question,2025-11-28T17:12:26.701288297,Variables & Data Types,300,a,Correct,2500
-GAME001,P1,Select Category,2025-11-28T17:12:32.516620953,Variables & Data Types,,,,0
-GAME001,P1,Select Question,2025-11-28T17:12:34.461380945,Variables & Data Types,200,,,0
-GAME001,P1,Select Question,2025-11-28T17:12:34.461429187,Variables & Data Types,200,,,0
-GAME001,P1,Answer Question,2025-11-28T17:12:39.445143236,Variables & Data Types,200,b,Correct,2500
-GAME001,P2,Select Category,2025-11-28T17:12:43.811907589,File Handling,,,,0
-GAME001,P2,Select Question,2025-11-28T17:12:45.122627311,File Handling,400,,,0
-GAME001,P2,Select Question,2025-11-28T17:12:45.122682323,File Handling,400,,,0
-GAME001,P2,Answer Question,2025-11-28T17:12:47.812919796,File Handling,400,c,Correct,2900
-GAME001,P1,Select Category,2025-11-28T17:12:49.72351762,File Handling,,,,0
-GAME001,P1,Select Question,2025-11-28T17:12:51.153917322,File Handling,300,,,0
-GAME001,P1,Select Question,2025-11-28T17:12:51.154229435,File Handling,300,,,0
-GAME001,P1,Answer Question,2025-11-28T17:12:55.364409913,File Handling,300,c,Correct,2800
-GAME001,P2,Select Category,2025-11-28T17:12:59.435398787,Control Structures,,,,0
-GAME001,P2,Select Question,2025-11-28T17:13:01.251092684,Control Structures,200,,,0
-GAME001,P2,Select Question,2025-11-28T17:13:01.251148717,Control Structures,200,,,0
-GAME001,P2,Answer Question,2025-11-28T17:13:04.970729314,Control Structures,200,b,Correct,3100
-GAME001,P1,Select Category,2025-11-28T17:13:10.26764966,Control Structures,,,,0
-GAME001,P1,Select Question,2025-11-28T17:13:12.00442792,Control Structures,100,,,0
-GAME001,P1,Select Question,2025-11-28T17:13:12.004476472,Control Structures,100,,,0
-GAME001,P1,Answer Question,2025-11-28T17:13:15.619513173,Control Structures,100,a,Correct,2900
-GAME001,P2,Select Category,2025-11-28T17:13:19.969198239,File Handling,,,,0
-GAME001,P2,Select Question,2025-11-28T17:13:21.336766884,File Handling,200,,,0
-GAME001,P2,Select Question,2025-11-28T17:13:21.336820123,File Handling,200,,,0
-GAME001,P2,Answer Question,2025-11-28T17:13:27.315006115,File Handling,200,b,Correct,3300
-GAME001,P1,Select Category,2025-11-28T17:13:31.49151301,Arrays,,,,0
-GAME001,P1,Select Question,2025-11-28T17:13:34.106825516,Arrays,300,,,0
-GAME001,P1,Select Question,2025-11-28T17:13:34.106877443,Arrays,300,,,0
-GAME001,P1,Answer Question,2025-11-28T17:13:39.778799107,Arrays,300,c,Correct,3200
-GAME001,P2,Select Category,2025-11-28T17:13:44.179179688,Functions,,,,0
-GAME001,P2,Select Question,2025-11-28T17:13:46.115033577,Functions,300,,,0
-GAME001,P2,Select Question,2025-11-28T17:13:46.115084693,Functions,300,,,0
-GAME001,P2,Answer Question,2025-11-28T17:13:49.307113531,Functions,300,a,Correct,3600
-GAME001,P1,Select Category,2025-11-28T17:13:52.370811605,Functions,,,,0
-GAME001,P1,Select Question,2025-11-28T17:13:54.578016101,Functions,200,,,0
-GAME001,P1,Select Question,2025-11-28T17:13:54.578072545,Functions,200,,,0
-GAME001,P1,Answer Question,2025-11-28T17:13:59.082823174,Functions,200,b,Correct,3400
-GAME001,P2,Select Category,2025-11-28T17:14:00.954043653,Arrays,,,,0
-GAME001,P2,Select Question,2025-11-28T17:14:02.351312267,Arrays,200,,,0
-GAME001,P2,Select Question,2025-11-28T17:14:02.351360398,Arrays,200,,,0
-GAME001,P2,Answer Question,2025-11-28T17:14:05.089723203,Arrays,200,b,Correct,3800
-GAME001,P1,Select Category,2025-11-28T17:14:06.730051674,File Handling,,,,0
-GAME001,P1,Select Question,2025-11-28T17:14:08.353499875,File Handling,100,,,0
-GAME001,P1,Select Question,2025-11-28T17:14:08.353553194,File Handling,100,,,0
-GAME001,P1,Answer Question,2025-11-28T17:14:12.561648018,File Handling,100,a,Correct,3500
-GAME001,P2,Select Category,2025-11-28T17:14:16.14536774,Arrays,,,,0
-GAME001,P2,Select Question,2025-11-28T17:14:18.914221817,Arrays,100,,,0
-GAME001,P2,Select Question,2025-11-28T17:14:18.914271611,Arrays,100,,,0
-GAME001,P2,Answer Question,2025-11-28T17:14:23.929336849,Arrays,100,a,Correct,3900
-GAME001,P1,Select Category,2025-11-28T17:14:25.905533576,Variables & Data Types,,,,0
-GAME001,P1,Select Question,2025-11-28T17:14:26.936237718,Variables & Data Types,100,,,0
-GAME001,P1,Select Question,2025-11-28T17:14:26.936288152,Variables & Data Types,100,,,0
-GAME001,P1,Answer Question,2025-11-28T17:14:31.057319121,Variables & Data Types,100,a,Correct,3600
+GAME001,P1,Enter Player Name,2025-11-28T17:18:42.017751956,,,,Jason,N/A
+GAME001,P2,Enter Player Name,2025-11-28T17:18:44.350205583,,,,Amelia,N/A
+GAME001,P3,Enter Player Name,2025-11-28T17:18:45.971818681,,,,Kurt,N/A
+GAME001,P4,Enter Player Name,2025-11-28T17:18:48.571362043,,,,Anita,N/A
+GAME001,System,Select Player Count,2025-11-28T17:18:48.571423615,,,,4,N/A
+GAME001,System,Load File,2025-11-28T17:18:48.587770455,,,,Success,
+GAME001,System,Start Game,2025-11-28T17:18:48.588727114,,,,,
+GAME001,P1,Select Category,2025-11-28T17:18:56.400464024,Functions,,,,0
+GAME001,P1,Select Question,2025-11-28T17:18:58.056395983,Functions,500,,,0
+GAME001,P1,Select Question,2025-11-28T17:18:58.056459537,Functions,500,,,0
+GAME001,P1,Answer Question,2025-11-28T17:19:03.497665125,Functions,500,b,Correct,500
+GAME001,P2,Select Category,2025-11-28T17:19:08.338110722,Functions,,,,0
+GAME001,P2,Select Question,2025-11-28T17:19:10.021609484,Functions,400,,,0
+GAME001,P2,Select Question,2025-11-28T17:19:10.022075496,Functions,400,,,0
+GAME001,P2,Answer Question,2025-11-28T17:19:14.911267035,Functions,400,b,Correct,400
+GAME001,P3,Select Category,2025-11-28T17:19:22.53739242,Variables & Data Types,,,,0
+GAME001,P3,Select Question,2025-11-28T17:19:24.966742068,Variables & Data Types,500,,,0
+GAME001,P3,Select Question,2025-11-28T17:19:24.966791882,Variables & Data Types,500,,,0
+GAME001,P3,Answer Question,2025-11-28T17:19:29.568580042,Variables & Data Types,500,b,Correct,500
+GAME001,P4,Select Category,2025-11-28T17:19:33.15033528,Arrays,,,,0
+GAME001,P4,Select Question,2025-11-28T17:19:34.571919094,Arrays,500,,,0
+GAME001,P4,Select Question,2025-11-28T17:19:34.572075336,Arrays,500,,,0
+GAME001,P4,Answer Question,2025-11-28T17:19:36.974783302,Arrays,500,b,Correct,500
+GAME001,P1,Select Category,2025-11-28T17:19:42.244675353,Control Structures,,,,0
+GAME001,P1,Select Question,2025-11-28T17:19:44.310535071,Control Structures,500,,,0
+GAME001,P1,Select Question,2025-11-28T17:19:44.310586367,Control Structures,500,,,0
+GAME001,P1,Answer Question,2025-11-28T17:19:50.279660052,Control Structures,500,c,Incorrect,0
+GAME001,P2,Select Category,2025-11-28T17:19:56.301536477,Variables & Data Types,,,,0
+GAME001,P2,Select Question,2025-11-28T17:19:59.909555427,Variables & Data Types,400,,,0
+GAME001,P2,Select Question,2025-11-28T17:19:59.909604029,Variables & Data Types,400,,,0
+GAME001,P2,Answer Question,2025-11-28T17:20:03.509388513,Variables & Data Types,400,c,Incorrect,0
+GAME001,P3,Select Category,2025-11-28T17:20:06.713409119,Arrays,,,,0
+GAME001,P3,Select Question,2025-11-28T17:20:10.699628852,Arrays,100,,,0
+GAME001,P3,Select Question,2025-11-28T17:20:10.699682241,Arrays,100,,,0
+GAME001,P3,Answer Question,2025-11-28T17:20:13.074816333,Arrays,100,a,Correct,600
+GAME001,P4,Select Category,2025-11-28T17:20:16.557133329,Control Structures,,,,0
+GAME001,P4,Select Question,2025-11-28T17:20:18.596919308,Control Structures,400,,,0
+GAME001,P4,Select Question,2025-11-28T17:20:18.596987799,Control Structures,400,,,0
+GAME001,P4,Answer Question,2025-11-28T17:20:21.86934515,Control Structures,400,d,Correct,900
+GAME001,P1,Select Category,2025-11-28T17:20:26.436638309,File Handling,,,,0
+GAME001,P1,Select Question,2025-11-28T17:20:28.467195957,File Handling,100,,,0
+GAME001,P1,Select Question,2025-11-28T17:20:28.467256216,File Handling,100,,,0
+GAME001,P1,Answer Question,2025-11-28T17:20:31.643908933,File Handling,100,b,Incorrect,0
+GAME001,System,Game Quit by Amelia,2025-11-28T17:20:40.24905486,,,,,
