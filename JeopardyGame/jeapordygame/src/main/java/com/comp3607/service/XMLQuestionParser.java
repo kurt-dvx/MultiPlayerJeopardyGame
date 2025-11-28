@@ -35,7 +35,7 @@ public class XMLQuestionParser extends AbstractQuestionParser {
     private List<Question> parseXMLContent(String xml) {
         List<Question> questions = new ArrayList<>();
         
-        // Simple XML parsing without external libraries
+        // Simple XML parsing 
         String[] questionBlocks = xml.split("<question>");
         
         for (String block : questionBlocks) {

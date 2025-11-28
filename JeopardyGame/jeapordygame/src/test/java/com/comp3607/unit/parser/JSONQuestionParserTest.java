@@ -45,6 +45,6 @@ class JSONQuestionParserTest {
         assertNotNull(questions);
         assertTrue(questions.isEmpty());
         
-        System.out.println("✓ Handled non-existent JSON file gracefully");
+        System.out.println("✓ Handled non-existent JSON file");
     }
 }

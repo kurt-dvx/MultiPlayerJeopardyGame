@@ -37,7 +37,7 @@ public class Main {
             // Phase 4: Gameplay
             runGameplay(gameService, ui, logService);
             
-            // Phase 5: Reporting (ALWAYS generate reports)
+            // Phase 5: Reporting
             generateReports(gameService, logService);
             
         } catch (Exception e) {
@@ -49,7 +49,7 @@ public class Main {
     }
     
     private static void runGameplay(GameService gameService, ConsoleUI ui, EventLogService logService) {
-        System.out.println("\nGAME STARTED! Type 'QUIT' during category selection to end early.");
+        System.out.println("\nGame Started! Type 'QUIT' during category selection to end early.");
         
         while (!gameService.isGameOver()) {
             Player currentPlayer = gameService.getCurrentPlayer();
@@ -85,10 +85,10 @@ public class Main {
             TextReportGenerator reporter = new TextReportGenerator();
             reporter.generateReport(gameService.getSession(), "game_report.txt");
             
-            // Generate event log separately
+            // Generate event log
             logService.generateEventLog("event_log.csv");
             
-            System.out.println("Reports generated!");
+            System.out.println("=> Reports generated!");
         } catch (Exception e) {
             System.err.println("Error generating reports: " + e.getMessage());
         }

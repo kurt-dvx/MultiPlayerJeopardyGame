@@ -1,31 +1,115 @@
 JEOPARDY GAME REPORT
 ================================
 
-Players: Jason, Amelia
+Players: Anita, Amelia
 
 Gameplay Summary:
 -----------------
-Turn 1: Player joined: Jason
+Turn 1: Player joined: Anita
 Turn 2: Player joined: Amelia
-Turn 3: Jason selected Control Structures for 100 pts
-Turn 4: Question: Which statement is used to make a decision?
-Answer: a — Correct (+100 pts)
-Score after turn: Jason = 100
-Turn 5: Amelia selected Functions for 500 pts
-Turn 6: Question: If a function is not declared before use, what may happen?
+Turn 3: Anita selected Control Structures for 500 pts
+Turn 4: Question: How many times will the loop for(int i=0;i<3;i++) run?
 Answer: b — Correct (+500 pts)
-Score after turn: Amelia = 500
-Turn 7: Jason selected Functions for 200 pts
-Turn 8: Question: What is the purpose of a function parameter?
+Score after turn: Anita = 500
+Turn 5: Amelia selected Control Structures for 400 pts
+Turn 6: Question: Which keyword exits a loop immediately?
+Answer: d — Correct (+400 pts)
+Score after turn: Amelia = 400
+Turn 7: Anita selected Functions for 500 pts
+Turn 8: Question: If a function is not declared before use, what may happen?
+Answer: b — Correct (+500 pts)
+Score after turn: Anita = 1000
+Turn 9: Amelia selected Arrays for 500 pts
+Turn 10: Question: How many elements in int arr[3][4];?
+Answer: b — Correct (+500 pts)
+Score after turn: Amelia = 900
+Turn 11: Anita selected Functions for 100 pts
+Turn 12: Question: Which keyword is used to define a function returning no value?
+Answer: b — Correct (+100 pts)
+Score after turn: Anita = 1100
+Turn 13: Amelia selected File Handling for 500 pts
+Turn 14: Question: What happens if a file fails to open?
+Answer: c — Correct (+500 pts)
+Score after turn: Amelia = 1400
+Turn 15: Anita selected Variables & Data Types for 500 pts
+Turn 16: Question: Which operator is used to get the remainder?
+Answer: b — Correct (+500 pts)
+Score after turn: Anita = 1600
+Turn 17: Amelia selected Arrays for 400 pts
+Turn 18: Question: What happens if you access out-of-range index?
+Answer: b — Correct (+400 pts)
+Score after turn: Amelia = 1800
+Turn 19: Anita selected Variables & Data Types for 400 pts
+Turn 20: Question: Which of the following is a floating-point literal?
+Answer: b — Correct (+400 pts)
+Score after turn: Anita = 2000
+Turn 21: Amelia selected Functions for 400 pts
+Turn 22: Question: Which statement exits a function and sends a value back?
+Answer: b — Correct (+400 pts)
+Score after turn: Amelia = 2200
+Turn 23: Anita selected Control Structures for 300 pts
+Turn 24: Question: Which loop always executes at least once?
+Answer: c — Correct (+300 pts)
+Score after turn: Anita = 2300
+Turn 25: Amelia selected Variables & Data Types for 300 pts
+Turn 26: Question: What is the value of x after int x = 5/2;?
+Answer: a — Correct (+300 pts)
+Score after turn: Amelia = 2500
+Turn 27: Anita selected Variables & Data Types for 200 pts
+Turn 28: Question: Which data type is used to store a single character?
 Answer: b — Correct (+200 pts)
-Score after turn: Jason = 300
-Turn 9: Amelia selected Control Structures for 500 pts
-Turn 10: Question: How many times will the loop for(int i=0;i<3;i++) run?
-Answer: b — Correct (+500 pts)
-Score after turn: Amelia = 1000
+Score after turn: Anita = 2500
+Turn 29: Amelia selected File Handling for 400 pts
+Turn 30: Question: Which function closes a file?
+Answer: c — Correct (+400 pts)
+Score after turn: Amelia = 2900
+Turn 31: Anita selected File Handling for 300 pts
+Turn 32: Question: Which method opens a file in append mode?
+Answer: c — Correct (+300 pts)
+Score after turn: Anita = 2800
+Turn 33: Amelia selected Control Structures for 200 pts
+Turn 34: Question: What is the output of: if (5 > 10) cout << 'Hi'; else cout << 'Bye';
+Answer: b — Correct (+200 pts)
+Score after turn: Amelia = 3100
+Turn 35: Anita selected Control Structures for 100 pts
+Turn 36: Question: Which statement is used to make a decision?
+Answer: a — Correct (+100 pts)
+Score after turn: Anita = 2900
+Turn 37: Amelia selected File Handling for 200 pts
+Turn 38: Question: Which stream is used to write to a file?
+Answer: b — Correct (+200 pts)
+Score after turn: Amelia = 3300
+Turn 39: Anita selected Arrays for 300 pts
+Turn 40: Question: Which loop is best for iterating a fixed-size array?
+Answer: c — Correct (+300 pts)
+Score after turn: Anita = 3200
+Turn 41: Amelia selected Functions for 300 pts
+Turn 42: Question: What is the return type of int add(int a, int b)?
+Answer: a — Correct (+300 pts)
+Score after turn: Amelia = 3600
+Turn 43: Anita selected Functions for 200 pts
+Turn 44: Question: What is the purpose of a function parameter?
+Answer: b — Correct (+200 pts)
+Score after turn: Anita = 3400
+Turn 45: Amelia selected Arrays for 200 pts
+Turn 46: Question: What is the index of the first element in a C++ array?
+Answer: b — Correct (+200 pts)
+Score after turn: Amelia = 3800
+Turn 47: Anita selected File Handling for 100 pts
+Turn 48: Question: Which header file is used for file I/O?
+Answer: a — Correct (+100 pts)
+Score after turn: Anita = 3500
+Turn 49: Amelia selected Arrays for 100 pts
+Turn 50: Question: Which declares an array of 5 integers?
+Answer: a — Correct (+100 pts)
+Score after turn: Amelia = 3900
+Turn 51: Anita selected Variables & Data Types for 100 pts
+Turn 52: Question: Which of the following declares an integer variable in C++?
+Answer: a — Correct (+100 pts)
+Score after turn: Anita = 3600
 
 Final Scores:
-Jason: 300
-Amelia: 1000
+Anita: 3600
+Amelia: 3900
 
-Report generated on: 2025-11-28T03:47:59.660955443
+Report generated on: 2025-11-28T17:14:31.063052586
