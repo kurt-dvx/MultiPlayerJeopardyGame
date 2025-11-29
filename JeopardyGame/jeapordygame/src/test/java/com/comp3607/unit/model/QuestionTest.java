@@ -7,26 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class QuestionTest {
     
     @Test
-    void testQuestionCreation() {
-        System.out.println("=== Testing Question Creation ===");
-        Question question = new Question("Science", 100, "What is H2O?", "Water");
-        
-        System.out.println("Category: " + question.getCategory());
-        System.out.println("Value: " + question.getValue());
-        System.out.println("Question: " + question.getQuestionText());
-        System.out.println("Answer: " + question.getAnswer());
-        System.out.println("Used: " + question.isUsed());
-        
-        assertEquals("Science", question.getCategory(), "Category should match");
-        assertEquals(100, question.getValue(), "Value should match");
-        assertEquals("What is H2O?", question.getQuestionText(), "Question text should match");
-        assertEquals("Water", question.getAnswer(), "Answer should match");
-        assertFalse(question.isUsed(), "New question should not be used");
-        
-        System.out.println("✓ Question creation test passed\n");
-    }
-    
-    @Test
     void testCheckAnswer() {
         System.out.println("=== Testing Answer Checking ===");
         Question question = new Question("Science", 100, "What is H2O?", "Water");

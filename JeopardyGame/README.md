@@ -9,16 +9,20 @@ A console-based multiplayer Jeopardy game application built with Java, implement
 - Java 21 or higher
 - Maven 3.6+
 
-### Building the Project
+### Option 1: Using Microsoft Java Extension Pack (Recommended)
+
+The easiest way to get started is to use the Microsoft Java Extension Pack:
+
+1. Install the **[Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)** in VS Code
+2. Open the project in VS Code
+3. Click the **Run** button (▶️) in the editor to run the main application
+4. The program will start automatically
+
+### Option 2: Using Maven from Terminal
 
 ```bash
-cd jeapordygame
+cd ./jeapordygame
 mvn clean install
-```
-
-### Running the Game
-
-```bash
 mvn exec:java -Dexec.mainClass="com.comp3607.Main"
 ```
 
@@ -38,8 +42,17 @@ jeapordygame/
 │   │   ├── strategy/                    # Strategy pattern for report generation
 │   │   ├── template/                    # Template method pattern for parsing
 │   │   └── UI/                          # Console UI components
-│   ├── resources/                       # Sample game data files
-│   └── test/                            # Unit and integration tests
+│   ├── main/resources/                  # Sample game data files
+│   └── test/
+│       ├── java/com/comp3607/
+│       │   ├── integration/             # Integration tests
+│       │   │   └── GameIntegrationTest.java
+│       │   └── unit/                    # Unit tests
+│       │       ├── model/               # Model tests (PlayerTest, QuestionTest)
+│       │       ├── parser/              # Parser tests (CSVQuestionParserTest, etc.)
+│       │       ├── service/             # Service tests
+│       │       └── strategy/            # Strategy tests
+│       └── resources/                   # Test data files (test-questions.csv, etc.)
 └── pom.xml                              # Maven configuration
 ```
 
@@ -61,9 +74,20 @@ jeapordygame/
 
 ## Testing
 
+### Using VS Code Java Extension Pack (Recommended)
+
+1. Navigate to the test folder: `src/test`
+2. Right-click on **test** and select **Run Tests** to run all tests
+3. Alternatively, you can test at different levels:
+   - Navigate to and right-click on the `integration/` or `unit/` folder and select **Run Tests** for specific groups
+   - Right-click on a specific test file (e.g., `PlayerTest.java`) and select **Run Tests** for individual files
+   - Click on a test method and use the Run/Debug code lens for single methods
+
+### Using Maven from Terminal
+
 Run all tests:
 ```bash
-cd jeapordygame
+cd ./jeapordygame
 mvn test
 ```
 
